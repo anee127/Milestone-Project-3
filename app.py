@@ -28,6 +28,25 @@ def get_recipes():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check name already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"name": request.form.get("name").lower()})
+
+        if existing_user:
+            flash("Name already exists")
+            return redirect(url_for("register"))
+
+        register = {
+            "name": request.form.get("name").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+        
+        # put new user into 'session' cookie
+        session["user"] = request.form.get("name").lower()
+        flash("Registration Successful")
     return render_template("register.html")
 
 if __name__ == "__main__":
