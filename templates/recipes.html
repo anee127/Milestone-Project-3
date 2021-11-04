@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 {% block content%}
     {% for recipes in recipes %}
-    {{ recipes.name }}<br>
-    {{ recipes.image }}<br>
-    {{ recipes.ingredients }}<br>
-    {{ recipes.instructions }}<br>
-    {{ recipes.user }}<br>
+   
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="static/images/salad-image.jpg">
+          <span class="card-title">Welcome to Genius Recipes</span>
+        </div>
+        <div class="card-content">
+          <p>Sign up to Genius Recipes now to create your own directory of personal recipes! upload and share your genius recipes with others through this site. </p>
+        </div>
+        <div class="card-action">
+        <a href="#" class="waves-effect waves-light light-green darken-4 btn-large">Register Now!</a>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endfor %}
 {% endblock %}
