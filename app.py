@@ -74,7 +74,14 @@ def login():
             flash("Incorrect Email and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")    
+    return render_template("login.html")   
+
+@app.route("/profile/<name>", methods=["GET", "POST"])
+def profile(name):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"name": session["user"]})["name"]
+    return render_template("profile.html", name=name)     
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
