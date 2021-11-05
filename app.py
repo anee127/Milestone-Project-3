@@ -22,30 +22,30 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("index.html", recipes=recipes)
 
 # register page function
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check name already exists in db
+        # check if email already exists in db
         existing_user = mongo.db.users.find_one(
-            {"name": request.form.get("name").lower()})
+            {"email": request.form.get("email").lower()})
 
         if existing_user:
-            flash("Name already exists")
+            flash("Email already exists")
             return redirect(url_for("register"))
 
-        register = {
+        new_user = {
             "name": request.form.get("name").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(new_user)
         
         # put new user into 'session' cookie
-        session["user"] = request.form.get("name").lower()
+        session["user"] = request.form.get("email").lower()
         flash("Registration Successful")
     return render_template("register.html")
 
@@ -63,25 +63,26 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("email").lower()
-                    flash("Welcome, {}".format(request.form.get("email")))
+                    flash("Login Successful".format(request.form.get("email")))
             else:
                 # invalid password match
                 flash("Incorrect Email and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            # email doesn't exist
             flash("Incorrect Email and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")   
+    return render_template("login.html")  
 
-@app.route("/profile/<name>", methods=["GET", "POST"])
-def profile(name):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"name": session["user"]})["name"]
-    return render_template("profile.html", name=name)     
+
+@app.route("/profile/<email>", methods=["GET", "POST"])
+def profile(email):
+    # grab the session user's email from db
+    email = mongo.db.users.find_one(
+        {"email": session["user"]})["email"]
+    return render_template("profile.html", email=email)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
