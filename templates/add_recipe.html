@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-green-text text-darken-4 center-align">Add Task</h3>
+    <h3 class="light-green-text text-darken-4 center-align">Add Recipe</h3>
 
-    <div class="row">
-        <form class="col s12" method="POST" action="">
+    <div class="row card-panel white lighten-5">
+        <form class="col s12" method="POST" action="{{url_for('add_recipe')}}">
+        <!-- Recipe name input-->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-carrot prefix light-green-text text-darken-4"></i>
@@ -12,26 +13,41 @@
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>    
+        <!-- ingredients input-->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix light-green-text text-darken-4"></i>
-                    <input id="icon_utensils" type="tel" class="validate">
-                    <label for="icon_utensils">Ingredients</label>
+                    <input id="ingredients" name="ingredients" type="text" class="validate" required>
+                    <label for="ingredients">Ingredients</label>
                 </div>
-            </div>    
+            </div>
+         <!-- instructions input-->        
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-scroll prefix light-green-text text-darken-4"></i>
-                    <input id="icon_scroll" type="tel" class="validate">
-                    <label for="icon_scroll">Instructions</label>
+                    <input id="instructions" name="instructions" type="text" class="validate" required>
+                    <label for="instructions">Instructions</label>
                 </div>
-            </div>    
+            </div>  
+         <!-- file image input-->    
+            <div class="row"> 
+              <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn light-green darken-4 text-shadow">
+                    <span> Image File</span>
+                    <input type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input id="recipe_image" name="recipe_image" class="file-path validate" type="text" required>
+                  </div>
+                </div>
+              </form> 
+            </div>
+         <!-- Submit button -->    
             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user prefix light-green-text text-darken-4"></i>
-                    <input id="icon_user" type="tel" class="validate">
-                    <label for="icon_user">Author</label>
-                </div>    
+                <button type="submit" class="btn waves-effect waves-light light-green darken-1 text-shadow">
+                    submit <i class="fas fa-sign-in-alt"></i>
+                </button>
             </div>
         </form>
     </div>
