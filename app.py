@@ -38,7 +38,8 @@ def register():
         new_user = {
             "name": request.form.get("name").lower(),
             "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "image": request.form.get("image")
         }
         mongo.db.users.insert_one(new_user)
         
@@ -103,11 +104,12 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "ingredients": request.form.get("ingredients"),
             "instructions": request.form.get("instructions"),
+            "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
         }
         mongo.db.tasks.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("get_recipes"))
+        return redirect(url_for("show_recipe"))
     return render_template("add_recipe.html")
 
 

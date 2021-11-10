@@ -2,21 +2,45 @@
 {% block content%}
     {% for recipes in recipes %}
    
+ <!-- Title -->
+ <div class="row">
+  <h3 class="center-align">{{recipe.recipe_name}}</h3>
+  <hr class="blackline">
+</div>
+
+<div class="container">
+  <!-- Image and info -->
   <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <img src="static/images/salad-image.jpg">
-          <span class="card-title">Welcome to Genius Recipes</span>
-        </div>
-        <div class="card-content">
-          <p>Sign up to Genius Recipes now to create your own directory of personal recipes! upload and share your genius recipes with others through this site. </p>
-        </div>
-        <div class="card-action">
-        <a href="#" class="waves-effect waves-light light-green darken-4 btn-large">Register Now!</a>
-        </div>
+      <div class="col s4">
+          <h6>Created by: {{recipe.created_by}}</h6>
       </div>
-    </div>
+      <div class="col s8"> 
+              <img class="img_recipe" src="{{recipe.img_url}}" alt="recipe_image">
+      </div>
   </div>
+  <!-- Ingredients and instructions -->
+  <div class="row">
+      <div class="col s4 custom-col">
+          <h4>Ingredients</h4>
+          <ul>
+              {% for list in recipe.ingredients.splitlines() %}
+                  <li>
+                      <p><i class="fas fa-circle"></i> {{list}}</p>    
+                  </li>
+              {% endfor %}
+          </ul> 
+      </div>
+      <div class="col s8">
+          <h4>Instructions</h4>
+          <ol>
+              {% for steps in recipe.instructions.splitlines() %}
+                  <li>
+                      <p>{{steps}}</p>
+                  </li>
+              {% endfor %}
+          </ol> 
+      </div>
+  </div>
+</div>
 {% endfor %}
 {% endblock %}
