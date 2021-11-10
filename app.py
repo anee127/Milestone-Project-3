@@ -23,6 +23,7 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("index.html", recipes=recipes)
 
+
 # register page function
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -77,6 +78,7 @@ def login():
 
     return render_template("login.html")  
 
+
 # Profile Page function
 @app.route("/profile/<email>", methods=["GET", "POST"])
 def profile(email):
@@ -88,6 +90,7 @@ def profile(email):
 
     return redirect(url_for("login"))
 
+
 # Logout function
 @app.route("/logout")
 def logout():
@@ -96,9 +99,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
 # display recipe function
-@app.route("/recipe/<recipe_id>")
-def show_recipe(recipe_id):
+@app.route("/recipe_id>")
+def new_recipe(recipe_id):
     # Find recipe on the basis of id
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
@@ -106,7 +110,8 @@ def show_recipe(recipe_id):
     if not recipe:
         return render_template("error_handlers/404.html")
 
-    return render_template("recipes/recipe.html", recipe=recipe)
+    return render_template("show_recipe.html", recipe=recipe)
+
 
 # Adding recipe function
 @app.route("/add_recipe", methods=["GET", "POST"])
