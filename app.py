@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find())
     return render_template("index.html", recipes=recipes)
 
 # register page function
@@ -96,6 +96,18 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+# display recipe function
+@app.route("/recipe/<recipe_id>")
+def show_recipe(recipe_id):
+    # Find recipe on the basis of id
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    # recipe id don't exist, show 404 error
+    if not recipe:
+        return render_template("error_handlers/404.html")
+
+    return render_template("recipes/recipe.html", recipe=recipe)
+
 # Adding recipe function
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
@@ -104,12 +116,12 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "ingredients": request.form.get("ingredients"),
             "instructions": request.form.get("instructions"),
-            "recipe_image": request.form.get("recipe_image"),
+            "image_url": request.form.get("image_url"),
             "created_by": session["user"]
         }
-        mongo.db.tasks.insert_one(recipe)
+        mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("show_recipe"))
+        return redirect(url_for("add_recipe"))
     return render_template("add_recipe.html")
 
 
