@@ -51,6 +51,7 @@ def register():
     return render_template("register.html")
 
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Profile secion
 # login page function
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -91,6 +92,17 @@ def profile(email):
     return redirect(url_for("login"))
 
 
+# edit profile function
+@app.route('/edit_profile', methods=['GET', 'POST'])
+def edit_profile():    
+    if 'user' not in session:
+        redirect(url_for('login'))
+    email = mongo.db.users.find_one({'email': session.get('user')})    
+
+    if request.method == 'POST':   
+    return render_template('edit_profile.html')
+
+
 # Logout function
 @app.route("/logout")
 def logout():
@@ -99,7 +111,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Recipes secion
 # display recipe function
 @app.route('/recipe/<recipe_id>')
 def recipe(recipe_id):
@@ -125,6 +137,14 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("add_recipe"))
     return render_template("add_recipe.html")
+
+# Deleting Recipe function
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    # Delete recipe from db
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe is succesfully deleted")
+    return redirect(url_for("profile", username=session['user']))    
 
 
 if __name__ == "__main__":
