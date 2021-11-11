@@ -57,7 +57,7 @@ The standard font is used throughout the webpage, a font that is easy to read an
 A relevant image was used for the hero image of the homepage that ties in with the colour scheme. All other recipe images are taken from external sources uploaded by registered users.
 5. **Wireframes**
 At the start of the project, I designed the wireframes using Balsamiq. These initial designs made it easier to plan the overall design and structure of the webpage. Some elements of the final webpage are different from these original wireframes.
-[Wireframes link](static/pdf/ms2-wireframes.pdf)
+[Wireframes link](static/pdf/MS3-wireframes.pdf)
 ## **Features**
 ### Existing Features
 -	Responsive design and user-friendly interface.
