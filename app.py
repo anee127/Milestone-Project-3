@@ -45,7 +45,7 @@ def register():
         mongo.db.users.insert_one(new_user)
         
         # put new user into 'session' cookie
-        session["user"] = request.form.get("email").lower()
+        session["user"] = request.form.get("email").lower() # use object Id for session user
         flash("Registration Successful")
         return redirect(url_for("profile", email=session['user']))
     return render_template("register.html")
@@ -93,14 +93,6 @@ def profile(email):
 
 
 # edit profile function
-@app.route('/edit_profile', methods=['GET', 'POST'])
-def edit_profile():    
-    if 'user' not in session:
-        redirect(url_for('login'))
-    email = mongo.db.users.find_one({'email': session.get('user')})    
-
-    if request.method == 'POST':   
-    return render_template('edit_profile.html')
 
 
 # Logout function
@@ -113,13 +105,6 @@ def logout():
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Recipes secion
 # display recipe function
-@app.route('/recipe/<recipe_id>')
-def recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-      # recipe id don't exist, show 404 error
-    if not recipe:
-        return render_template("error_handlers/404.html")
-    return render_template("show_recipe.html", recipe=recipe)
 
 
 # Adding recipe function
