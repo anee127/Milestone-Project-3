@@ -28,7 +28,7 @@
          <p>{{ recipe.ingredients }}</p>
          <p>{{ recipe.instructions }}</p>
         <div class="card-action">
-          <a class="waves-effect waves-light red lighten-1 btn-small">Edit</a>
+          <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light red lighten-1 btn-small">Edit</a>
           <a class="waves-effect waves-light red lighten-1 btn-small">Delete</a>
         </div>
       </div>
