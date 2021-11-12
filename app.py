@@ -125,6 +125,9 @@ def recipe(recipe_id):
 # Adding recipe function
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+        
     if request.method == "POST":
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
