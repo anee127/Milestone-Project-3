@@ -1,21 +1,13 @@
 {% extends "base.html" %}
 {% block content%}
-  <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <img src="static/images/salad-image.jpg">
-          <span class="card-title">Welcome to Genius Recipes</span>
-        </div>
-        <div class="card-content">
-          <p>Sign up to Genius Recipes now to create your own directory of personal recipes! upload and share your genius recipes with others through this site. </p>
-        </div>
-        <div class="card-action">
-        <a href="#" class="waves-effect waves-light light-green darken-4 btn-large">Register Now!</a>
-        </div>
-      </div>
-    </div>
+  <header id="hero-image" class="text-center bg-image d-flex flex-column justify-content-center align-items-center">
+  <div id="mask" class="text-white d-flex flex-column justify-content-around align-items-center mx-3 px-3 py-3">
+    <h1>Welcome to Genius Recipes</h1>
+    <p>Sign up to Genius Recipes now to create your own directory of personal recipes! upload and share your genius recipes with others through this site.</p>
+    <a class="btn btn-outline-dark light-green darken-4 btn-lg" href="{{ url_for('register') }}"
+      role="button">REGISTER NOW!</a>
   </div>
+</header>
   <div class="row">
     {% for recipe in recipes %}
     <div class="col s12 m7">
