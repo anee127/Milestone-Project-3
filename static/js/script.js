@@ -2,7 +2,10 @@ $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $(document).ready(function(){
       $('.collapsible').collapsible();
+      $('.modal').modal();
     });
+     // Copied from code institute mini project - adding A task - writing to the database - Materialize Form Validation 
+    // https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/04-AddingATask-WritingToTheDatabase/02-materialize-select-validation/static/js/script.js
     validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
