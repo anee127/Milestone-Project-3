@@ -21,10 +21,11 @@
          <p>{{ recipe.ingredients }}</p>
          <p>{{ recipe.instructions }}</p>
         <div class="card-action">
-<!--Edit button-->
-          <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light red lighten-1 btn-small">Edit</a>
-<!--Delete Button-->          
-          <a class="waves-effect waves-light red lighten-1 btn-small">Delete</a>
+<!--Edit/Delete button-->
+        {% if session.user|lower == recipe.created_by|lower %}
+          <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light light-green lighten-1 btn-small">Edit</a>
+          <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light red lighten-1 btn-small">Delete</a>
+        {% endif %}
         </div>
       </div>
     </div>
