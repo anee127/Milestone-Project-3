@@ -4,11 +4,14 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+
 if os.path.exists("env.py"):
     import env
 
 
 app = Flask(__name__)
+
+app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024 # file sizes under 2mb
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -18,10 +21,10 @@ mongo = PyMongo(app)
 
 # welcome page function
 @app.route("/")
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("index.html", recipes=recipes)
+@app.route("/homepage")
+def homepage():
+    index = list(mongo.db.recipes.find())
+    return render_template("index.html", index=index)
 
 
 # register page function
