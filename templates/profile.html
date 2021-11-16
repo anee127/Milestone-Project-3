@@ -3,10 +3,10 @@
 
  <!-- initial code template taken from materialise to render card and input structure -->
 <div class="row">
-    <div class="col s12 m8 offset-m2">
+    <div class="col s12 m8 offset-m2" method="POST">
         <div class="card-panel">
             <h3 class="center-align light-green-text text-darken-4">
-                {{email}}'s Profile'
+                {{session["user"]}}'s Profile'
             </h3> 
         </div>
     </div>

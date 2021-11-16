@@ -108,7 +108,18 @@ def logout():
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Recipes secion
 # display recipe function
+@app.route('/show_recipe/<recipe_id>')
+def show_recipe(recipe_id):
+    """
+    Retrieve the specified recipe from the database and render
+    the display_recipe template.
+    """
 
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template(
+        'show_recipe.html',
+        recipe=recipe,
+        )
 
 # Adding recipe function
 @app.route("/add_recipe", methods=["GET", "POST"])
