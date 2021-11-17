@@ -6,7 +6,7 @@
     <div class="col s12 m8 offset-m2" method="POST">
         <div class="card-panel">
             <h3 class="center-align light-green-text text-darken-4">
-                {{Username}}'s Profile
+                {{ Username }}'s Profile
             </h3> 
         </div>
     </div>
@@ -19,50 +19,9 @@
   <!-- add recipe link -->
   <div class="col s7 m4 right">
     <h5><a href="{{ url_for('add_recipe') }}" class="black-cta">Add new recipe +</a></h5>
-</div>
-  <!-- All recipes of user -->
-  <div class="col s12 m8 offset-m2">
-    <ul class="collapsible">
-        {% for recipe in user_recipes %}
-            <li>
-                <div class="collapsible-header">
-                    <div class="col s2">
-                        <i class="fas fa-caret-down"></i> 
-                    </div>
-                    <div class="col s5">
-                        <h5>{{ recipe.recipe_name }}</h5>
-                    </div>
-                    <!-- Delete and edit recipe-->
-                    <div class="col s5">
-                        <!-- Modal delete Trigger -->
-                        <a class="modal-trigger change-button center align right" href="#modal{{ loop.index }}">Delete</a>
-                        <!-- Modal delete Structure -->
-                        <div id="modal{{ loop.index }}" class="modal">
-                            <div class="modal-content">
-                                <h4>Are you sure you want to delete {{ recipe.recipe_name }}?</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" class="modal-close  btn-flat">Cancel</a>
-                                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="modal-close btn-flat">Delete</a>
-                            </div>
-                        </div>
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="change-button center align right right">Edit</a>
-                    </div>
-                </div>
-                <!-- Collapse body with all info of the recipe -->
-                <div class="collapsible-body">
-                    <h6><a class = "black-cta right" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to recipe</a></h6>
-                    <h6>Name: {{ recipe.recipe_name }}</h6>
-                    <h6>Ingredients: {{ recipe.ingredients }}</h6>
-                    <h6>Instructions: {{ recipe.instructions}}</h6>
-                    <h6>Created By: {{ recipe.created_by}}</h6>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
-</div>
+
 <!--Recipe Card-->
-<!--<div class="row">
+<div class="row">
   {% for recipe in recipes %}
   <div class="col s12 m7">
     <div class="card">
@@ -74,7 +33,7 @@
        <p>{{ recipe.ingredients }}</p>
        <p>{{ recipe.instructions }}</p>
       <div class="card-action">
-Edit/Delete button
+<!-- Edit/Delete button -->
       {% if session.user|lower == recipe.created_by|lower %}
         <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light light-green lighten-1 btn-small">Edit</a>
         <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light red lighten-1 btn-small">Delete</a>
@@ -83,5 +42,5 @@ Edit/Delete button
     </div>
   </div>
   {% endfor %}
-</div> -!>
+</div>
 {% endblock %}
