@@ -12,13 +12,12 @@
     {% endblock %}
     <title>Genius Recipes</title>
 </head>
-<body>
-
+<body class="#fff59d yellow lighten-3">
     <header>
       <!-- Desktop sidenav (code taken from materialize navbar section)-->
-        <nav class= "nav-extended text-shadow #558b2f light-green darken-3">
+        <nav class= "nav-extended text-shadow #33691e light-green darken-4">
             <div class="nav-wrapper">
-              <a href="{{ url_for('homepage') }}" class="brand-logo">Genius Recipes</a>
+              <a href="{{ url_for('homepage') }}" class="brand-logo justify-content-center">Genius Recipes</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
@@ -36,8 +35,8 @@
             </div>
           </nav>
          <!-- Mobile sidenav (code taken from materialize navbar section)-->
-          <ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align light-green-text text-darken 4">Genius Recipes</h4></li>
+          <ul class="sidenav #fff59d yellow lighten-5" id="mobile-demo">
+            <li><h4 class="center-align green-text text-darken-4" class="brand-logo justify-content-center">Genius Recipes</h4></li>
             <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
             <li><a href="">Recipes</a></li>
           {% if session.user %}
@@ -49,28 +48,13 @@
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
           {% endif %}
-
           </ul>
     </header>
-
-    <section>
-      <!-- flash messages -->
-      {% with messages = get_flashed_messages() %}
-          {% if messages %}
-              {% for message in messages %}
-                  <div class="row flashes">
-                      <h4 class="light-green lighten-4 center-align">{{ message }}</h4>
-                  </div>
-              {% endfor %}
-          {% endif %}
-      {% endwith %}
-  </section>
-
-  <main class="container">
+  <main>
     {% block content %}
     {% endblock %}
 </main>
-
+<!--Script Tags-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
