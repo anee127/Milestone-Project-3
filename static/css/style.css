@@ -15,12 +15,21 @@
     font-size: larger;
 }
 
+h1 {
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
 /* index. html: welcome card*/
 #hero-image {
     background-image: url("../images/salad-image.jpg");
     background-attachment: fixed;
     background-position: center top;
     background-size: cover;
+    background-repeat: no-repeat;
     width: auto;
     height: 100vh;
 
