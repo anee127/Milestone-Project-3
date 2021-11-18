@@ -23,7 +23,7 @@
                 <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
                 <li><a href="">Recipes</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <!-- <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li> -->
                 <li><a href="">Edit Profile</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
@@ -40,7 +40,7 @@
             <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
             <li><a href="">Recipes</a></li>
           {% if session.user %}
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <!-- <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li> -->
             <li><a href="">Edit Profile</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>

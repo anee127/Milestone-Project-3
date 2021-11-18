@@ -31,7 +31,7 @@ def homepage():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if email already exists in db
+        # check if already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -115,6 +115,8 @@ def show_recipe(recipe_id):
     """
 
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    print("uzairs")
+    print(recipe)
     return render_template(
         'show_recipe.html',
         recipe=recipe,
@@ -132,11 +134,11 @@ def add_recipe():
             "ingredients": request.form.get("ingredients"),
             "instructions": request.form.get("instructions"),
             "image_url": request.form.get("image_url"),
-            "created_by": session["user"]
+            "created_by": request.form.get("created_by")
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("add_recipe"))
+        return redirect(url_for("show_recipe"))
     return render_template("add_recipe.html")
 
 

@@ -44,7 +44,7 @@
             </div>
             <div class="d-flex justify-content-between align-items-center mt-2">
               <small>
-                <a class="recipe-card-link" href="{{ url_for('profile', user=recipe.created_by) }}">
+                <a class="recipe-card-link" href="{{ url_for('profile', username=recipe.created_by) }}">
                   <i class="fas fa-user-circle pe-1"></i>Added by: {{ recipe.create_by }}
                 </a>
                 {% if session.user|lower == recipe.created_by|lower %}
