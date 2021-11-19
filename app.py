@@ -89,7 +89,10 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:    
-        return render_template("profile.html", username=username)
+        user_recipes = list(
+            mongo.db.recipes.find({"created_by": session["user"]})
+        )
+        return render_template("profile.html", username=username, user_recipes=user_recipes)
 
     return redirect(url_for("login"))
 
@@ -106,17 +109,13 @@ def logout():
     return redirect(url_for("login"))
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Recipes secion
+
 # display recipe function
 @app.route('/show_recipe/<recipe_id>')
 def show_recipe(recipe_id):
-    """
-    Retrieve the specified recipe from the database and render
-    the display_recipe template.
-    """
 
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    print("uzairs")
-    print(recipe)
+
     return render_template(
         'show_recipe.html',
         recipe=recipe,
@@ -138,8 +137,8 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("show_recipe"))
-    return render_template("add_recipe.html")
+        return redirect(url_for("profile", username=session['user']))
+    return render_template("add_recipe.html", recipe=recipe)
 
 
 # Editing Recipe function
