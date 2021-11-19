@@ -146,6 +146,21 @@ def add_recipe():
 def edit_recipe(recipe_id):
     
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+        
+    if request.method == "POST":
+        recipe_info = {
+            "recipe_name": request.form.get("recipe_name"),
+            "ingredients": request.form.get("ingredients"),
+            "instructions": request.form.get("instructions"),
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, recipe_info)
+        flash("Recipe Successfully Changed")
+        
     return render_template("edit_recipe.html", recipe=recipe)    
 
 # Deleting Recipe function
