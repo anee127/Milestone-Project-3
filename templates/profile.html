@@ -63,10 +63,13 @@
                   </a>
                   {% if session.user|lower == recipe.created_by|lower %}
                 </small>
+                 <!-- edit/delete button -->
                 <a class="btn btn-sm ms-auto btn-outline-dark accent-color text-primary-color"
                   href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
                   Edit Recipe
                 </a>
+                <a class="waves-effect waves-light red lighten-1 btn-small">Delete Recipe</a>
+              </a>
                 {% endif %}
               </div>
             </div>
