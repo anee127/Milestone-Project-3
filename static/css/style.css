@@ -42,6 +42,5 @@ p {
     font-weight: bold;
     position: absolute;
     text-align: center;
-    top: 30%;
-    left: 15% 
+    padding: 10%;
 }
