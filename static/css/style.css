@@ -51,3 +51,9 @@ footer {
     font-size: 20px;
     font-weight: bold;
 }
+
+/* Profile page styling */
+
+.image-placeholder {
+    font-size: 50px;
+}

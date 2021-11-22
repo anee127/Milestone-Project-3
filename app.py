@@ -70,7 +70,7 @@ def login():
                     flash("Login Successful".format(request.form.get("username")))
                     return redirect(url_for("profile", username=session['user']))
             else:
-                # invalid password match
+                # invalid password match  -----
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 

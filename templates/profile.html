@@ -3,12 +3,17 @@
 
  <!-- initial code template taken from materialise to render card and input structure -->
 <div class="row">
-    <div class="col s12 m8 offset-m2" method="POST">
-        <div class="card-panel">
-            <h3 class="center-align light-green-text text-darken-4">
-                {{ session["user"] }}'s Profile
-            </h3> 
-        </div>
+  <div class="card-panel col s12 grey lighten-5 z-depth-1" method="POST">
+      <div class="col s6 center-align light-green-text text-darken-4">
+        {% if username.image %}
+        <img  src="{{username.image}}" alt="profile_image" class="circle responsive-img"/>
+        {% else %}
+        <i class="image-placeholder fas fa-user-circle "></i>
+        {% endif %}
+      </div>
+      <h3 class="col s6 center-align light-green-text text-darken-4">
+        {{ session["user"] }}'s profile
+    </h3> 
     </div>
 </div>
  <!-- Recipes of user -->
