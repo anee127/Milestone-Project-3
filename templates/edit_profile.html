@@ -21,10 +21,19 @@
                     <label for="password">Password</label>
                 </div>
             </div>
-            <!-- login -->
+             <!-- file image input-->    
+           <div class="row"> 
+            <div class="input-field col s12">
+                <i class="fas fa-images prefix light-green-text text-darken-4"></i>
+                <input id="user_image" name="user_image" type="url" pattern="https?://.+"  class="validate" required>
+                <label for="user_image">Profile Image</label>
+                <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
+            </div> 
+        </div>
+            <!-- save changes button -->
             <div class="row">
-                <button type="submit" class="col s12 btn-large light-green darken-4 text-shadow">
-                    Log In <i class="fas fa-sign-in-alt"></i>
+                <button type="submit" class="waves-effect waves-light btn-large light-green darken-4 text-shadow">
+                    Save changes <i class="fas fa-sign-in-alt"></i>
                 </button>
             </div>
         </div>

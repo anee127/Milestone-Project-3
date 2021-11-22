@@ -144,8 +144,6 @@ def add_recipe():
 # Editing Recipe function
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     if not session.get("user"):
         return render_template("error_handlers/404.html")
@@ -160,6 +158,8 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, recipe_info)
         flash("Recipe Successfully Changed")
+    
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})    
         
     return render_template("edit_recipe.html", recipe=recipe)    
 
