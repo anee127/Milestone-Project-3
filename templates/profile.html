@@ -34,14 +34,14 @@
     <div class="row justify-content-center pt-5">
         {% for recipe in user_recipes %}
       <div class="col-12 col-lg-8 mb-4">
-        <div class="card shadow-2-strong px-5 py-3 recipe-card">
+        <div class="card shadow-2-strong px-5 py-3 #fffde7 yellow lighten-4 recipe-card">
           <!-- Recipe Title -->
           <h5 class="card-title text-center">{{ recipe.recipe_name }}</h5>
           <div class="row">
             <div class="col-12 col-md-6 pt-3 text-center">
               <!-- Recipe Image -->
               {% if recipe.image_url %}
-              <img src="{{ recipe.image_url }}" alt="recipe image" class="recipe-card-image" />
+              <img src="{{ recipe.image_url }}" alt="recipe image" class="recipe-card-image respnsive" />
               {% else %}
               <i class="recipe-card-image-placeholder fas fa-utensils"></i>
               {% endif %}

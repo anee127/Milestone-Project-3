@@ -57,3 +57,9 @@ footer {
 .image-placeholder {
     font-size: 50px;
 }
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+  }
