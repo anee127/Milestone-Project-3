@@ -98,6 +98,21 @@ def profile(username):
 
 
 # edit profile function
+@app.route('/edit_profile/<user_id>', methods=['POST'])
+def edit_profile(user_id):
+
+    user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+    if request.method == 'POST':
+        updated_profile = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "image": request.form.get("image")
+        }
+        mongo.db.users.update({"_id": ObjectId(user_id)}, update_profile)
+        flash("Recipe Successfully Changed")
+        return redirect(url_for('profile', session["user"]))
+
+    return render_template("login.html", user=user)        
 
 
 # Logout function
