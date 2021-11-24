@@ -21,9 +21,10 @@
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
-                <li><a href="">Recipes</a></li>
+                <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('edit_profile', user_id=session['user']) }}">Edit Profile</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
@@ -37,9 +38,10 @@
           <ul class="sidenav #fff59d yellow lighten-5" id="mobile-demo">
             <li><h4 class="center-align green-text text-darken-4" class="brand-logo justify-content-center">Genius Recipes</h4></li>
             <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
-            <li><a href="">Recipes</a></li>
-          {% if session.user %}
+            <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
+            {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('edit_profile', user_id=session['user']) }}">Edit Profile</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
           {% else %}
