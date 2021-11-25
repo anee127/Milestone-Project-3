@@ -14,15 +14,6 @@
       <h3 class="col s6 center-align light-green-text text-darken-4">
         {{ session["user"] }}'s profile
     </h3>
-       <!-- edit button -->
-      <div class="col s6 center-align light-green-text text-darken-4">
-        {% for user in update_profile %}
-        <a class="btn btn-sm ms-auto btn-outline-dark accent-color text-primary-color"
-        href="{{ url_for('edit_profile', user_id=user._id) }}" role="button">
-        Edit Profile
-      </a>
-      {% endfor %}
-      </div> 
     </div>
 </div>
  <!-- Recipes of user -->
