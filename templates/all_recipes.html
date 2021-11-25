@@ -27,14 +27,8 @@
             <div class="col-12 col-md-6 pt-3">
               <!-- Recipe Ingredients -->
               <h6 class="text-decoration-underline">Ingredients</h6>
-              <ul>
-                {% for ingredient in ingredients %}
-                <li>
-                  {{ ingredient.quantity }} {{ ingredient.ingredient }}
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
+                <p>{{ recipe.ingredients }}</p>
+            </div>    
             <div class="col-12 pt-3">
               <!-- Recipe Instructions -->
               <h6 class="text-decoration-underline">Instructions</h6>
