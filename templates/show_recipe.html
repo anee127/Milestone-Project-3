@@ -21,7 +21,9 @@
           <div class="col-12 col-md-6 pt-3">
             <!-- Recipe Ingredients --> 
             <h6 class="text-decoration-underline">Ingredients</h6>
-            <p>{{ recipe.ingredients }}</p>
+              {% for list in recipe.ingredients.splitlines() %}
+            <p><i class="fas fa-circle"></i>{{list}}</p>
+              {% endfor %}
           </div>
           <div class="col-12 pt-3">
             <!-- Recipe Instructions -->

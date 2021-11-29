@@ -150,6 +150,8 @@ def add_recipe():
     if request.method == "POST":
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
+            "recipe_time": request.form.get("recipe_time"),
+            "recipe_serves": request.form.get("recipe_serves"),
             "ingredients": request.form.get("ingredients"),
             "instructions": request.form.get("instructions"),
             "image_url": request.form.get("image_url"),
@@ -171,6 +173,8 @@ def edit_recipe(recipe_id):
     if request.method == "POST":
         recipe_info = {
             "recipe_name": request.form.get("recipe_name"),
+            "recipe_time": request.form.get("recipe_time"),
+            "recipe_serves": request.form.get("recipe_serves"),
             "ingredients": request.form.get("ingredients"),
             "instructions": request.form.get("instructions"),
             "image_url": request.form.get("image_url"),
