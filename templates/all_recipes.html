@@ -18,7 +18,8 @@
       </div>
   </form>
 </div>
- 
+
+{% if recipes|length > 0 %}
   <div class="container">
     <div class="row justify-content-center pt-5">
         {% for recipe in recipes %}
@@ -36,8 +37,7 @@
               <i class="recipe-card-image-placeholder fas fa-utensils"></i>
               {% endif %}
             </div>
-           </a> 
-            
+           </a>   
             <div class="col-12 col-md-6 pt-3">
               <!-- Recipe Ingredients -->
               <h6 class="text-decoration-underline">Ingredients</h6>
@@ -79,4 +79,7 @@
       {% endfor %}
     </div>
   </div>
+  {% else %}
+  <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+  {% endif %}
 {% endblock %}
