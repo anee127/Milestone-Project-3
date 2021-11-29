@@ -28,6 +28,12 @@ def homepage():
     index = list(mongo.db.recipes.find())
     return render_template("index.html", index=index)
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    return render_template("all_recipes.html", recipes=recipes)    
+
 
 # register page function
 @app.route("/register", methods=["GET", "POST"])
