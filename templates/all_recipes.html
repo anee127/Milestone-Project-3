@@ -37,25 +37,36 @@
               <i class="recipe-card-image-placeholder fas fa-utensils"></i>
               {% endif %}
             </div>
-           </a>   
-            <div class="col-12 col-md-6 pt-3">
-              <!-- Recipe Ingredients -->
-              <h6 class="text-decoration-underline">Ingredients</h6>
-                <p>{{ recipe.ingredients }}</p>
-            </div>    
-            <div class="col-12 pt-3">
-              <!-- Recipe Instructions -->
-              <h6 class="text-decoration-underline">Instructions</h6>
-              <p>{{ recipe.instructions }}</p>
+           </a>
+            <!-- Recipe Details -->
+            <div class="mt-2">
+              <i class="fas fa-users pe-1"></i>Serves: {{ recipe.servings }}
             </div>
-            <div>
-              <!-- Recipe Details -->
-              <div class="mt-2">
-                <i class="fas fa-users pe-1"></i>Serves: {{ recipe.servings }}
-              </div>
-              <div class="mt-2">
-                <i class="far fa-clock pe-1"></i>{{ recipe.time_required }} minutes
-              </div>
+            <div class="mt-2">
+              <i class="far fa-clock pe-1"></i>{{ recipe.timing }} minutes
+            </div>   
+           <div class="col-12 col-md-6 pt-3">
+            <!-- Recipe Ingredients --> 
+            <h6 class="text-decoration-underline">Ingredients</h6>
+            <ul>
+              {% for list in recipe.ingredients.splitlines() %}
+              <li>
+                <p><i class="fas fa-circle"></i>{{list}}</p>
+              </li>
+              {% endfor %}
+            </ul>   
+          </div>
+          <div class="col-12 col-md-6 pt-3">
+            <!-- Recipe Ingredients --> 
+            <h6 class="text-decoration-underline">Instructions</h6>
+            <ul>
+              {% for steps in recipe.instructions.splitlines() %}
+              <li>
+                <p>{{steps}}</p>
+              </li>
+              {% endfor %}
+            </ul>   
+          </div>
               <div class="d-flex justify-content-between align-items-center mt-2">
                 <small>
                   <a class="recipe-card-link" href="{{ url_for('profile', username=recipe.created_by) }}">

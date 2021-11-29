@@ -1,56 +1,69 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-green-text text-darken-4 center-align">Edit Recipe</h3>
+<h3 class="light-green-text text-darken-4 center-align">Edit Recipe</h3>
 
-    <div class="row card-panel #fffde7 yellow lighten-4">
-        <form class="col s12" method="POST" action="{{url_for('edit_recipe', recipe_id=recipe._id)}}">
+<div class="row card-panel #fffde7 yellow lighten-4">
+    <form class="col s12" method="POST" action="{{url_for('edit_recipe', recipe_id=recipe._id)}}">
         <!-- Recipe name input-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-carrot prefix light-green-text text-darken-4"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{recipe.recipe_name}}" type="text" class="validate" required>
-                    <label for="recipe_name">Recipe Name</label>
-                </div>
-            </div>    
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-carrot prefix light-green-text text-darken-4"></i>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{recipe.recipe_name}}"
+                    type="text" class="validate" required>
+                <label for="recipe_name">Recipe Name</label>
+            </div>
+        </div>
+        <!--Timing input-->
+        <div class="input-field col s12 m4">
+            <input id="recipe_time" name="recipe_time" type="number" class="validate" required>
+            <label for="recipe_time">Duration (minutes)</label>
+        </div>
+        <!--serves input-->
+        <div class="input-field col s12 m4">
+            <input id="recipe_serves" name="recipe_serves" type="number" class="validate" required>
+            <label for="recipe_serves">Serves</label>
+        </div>
         <!-- ingredients input-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-utensils prefix light-green-text text-darken-4"></i>
-                    <textarea id="ingredients" name="ingredients" type="text" class="materialize-textarea validate" required>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-utensils prefix light-green-text text-darken-4"></i>
+                <textarea id="ingredients" name="ingredients" type="text" class="materialize-textarea validate"
+                    required>
                     {{- recipe.ingredients -}}
                     </textarea>
-                    <label for="ingredients">Ingredients</label>
-                </div>
+                <label for="ingredients">Ingredients</label>
             </div>
-         <!-- instructions input-->        
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-scroll prefix light-green-text text-darken-4"></i>
-                    <textarea id="instructions" name="instructions" type="text" class="materialize-textarea validate" required>
+        </div>
+        <!-- instructions input-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-scroll prefix light-green-text text-darken-4"></i>
+                <textarea id="instructions" name="instructions" type="text" class="materialize-textarea validate"
+                    required>
                     {{- recipe.instructions -}}    
                     </textarea>
-                    <label for="instructions">Instructions</label>
-                </div>
-            </div>  
-         <!-- file image input-->    
-            <div class="row"> 
-                <div class="input-field col s12">
-                    <i class="fas fa-images prefix light-green-text text-darken-4"></i>
-                    <input id="image_url" name="image_url" type="url" pattern="https?://.+"  class="validate" required>
-                    <label for="image_url">Image url</label>
-                    <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
-                </div> 
+                <label for="instructions">Instructions</label>
             </div>
-         <!-- Save Edits button -->    
-            <div class="row">
-                <button type="submit" class="btn waves-effect waves-light light-green darken-1 text-shadow">
-                    Save Edits <i class="fas fa-edit"></i>
-                </button>
-         <!--Delete Button-->          
-          <a class="waves-effect waves-light red lighten-1 btn-small">Delete Recipe</a>
+        </div>
+        <!-- file image input-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-images prefix light-green-text text-darken-4"></i>
+                <input id="image_url" name="image_url" type="url" pattern="https?://.+" class="validate" required>
+                <label for="image_url">Image url</label>
+                <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
             </div>
-        </form>
-    </div>
+        </div>
+        <!-- Save Edits button -->
+        <div class="row">
+            <button type="submit" class="btn waves-effect waves-light light-green darken-1 text-shadow">
+                Save Edits <i class="fas fa-edit"></i>
+            </button>
+            <!--Delete Button-->
+            <a class="waves-effect waves-light red lighten-1 btn-small">Delete Recipe</a>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
