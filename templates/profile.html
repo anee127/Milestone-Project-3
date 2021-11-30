@@ -3,17 +3,23 @@
 
 <!-- initial code template taken from materialise to render card and input structure -->
 <div class="row">
-  <div class="card-panel col s12 grey lighten-5 z-depth-1" method="POST">
-    <h3 class="col s6 center-align light-green-text text-darken-4">
+  <div class="col s12 center-align" method="POST">
+    <h3 class="col s6 m8 center-align light-green-text text-darken-4">
       {{ session["user"] }}'s profile
     </h3>
   </div>
 </div>
-<!-- Recipes of user -->
 <div class="row">
   <div class="col s5 m4 offset-m2">
-    <h5>My recipes</h5>
+    <h4 class="light-green-text text-darken-4">My recipes</h4>
   </div>
+  <!-- add recipe link -->
+  <div class="col s5 m4 offset-m2 right">
+    <h5><a href="{{ url_for('add_recipe') }}" class="black-cta amber-text text-darken-4">Add new recipe +</a></h5>
+  </div>
+</div>
+<!-- Recipes of user -->
+<div class="row">
   <div class="container">
     <div class="row justify-content-center pt-5">
       {% for recipe in user_recipes %}
@@ -48,12 +54,13 @@
               </small>
               {% endif %}
               <!-- edit/delete button -->
-              {% if session.user == recipe.created_by %}
+              {% if session.user|lower == recipe.created_by|lower %}
               <a class="btn btn-sm ms-auto btn-outline-dark light-green text-primary-color"
                 href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
                 Edit Recipe
               </a>
-              <a href="#delete_recipe" class="waves-effect waves-light deep-orange darken-4 btn-small modal-trigger">Delete Recipe</a>
+              <a href="#delete_recipe"
+                class="waves-effect waves-light deep-orange darken-4 btn-small modal-trigger">Delete Recipe</a>
               </a>
               {% endif %}
             </div>
@@ -77,7 +84,5 @@
 
     </div>
   </div>
-  <!-- add recipe link -->
-  <div class="col s7 m4 right">
-    <h5><a href="{{ url_for('add_recipe') }}" class="black-cta">Add new recipe +</a></h5>
-    {% endblock %}
+</div>
+{% endblock %}
