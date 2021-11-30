@@ -195,7 +195,7 @@ def delete_recipe(recipe_id):
     # Delete recipe from db
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe succesfully Deleted")
-    return redirect(url_for("get_recipes", username=session['user']))
+    return redirect(url_for("all_recipes", username=session['user']))
 
 
 if __name__ == "__main__":
