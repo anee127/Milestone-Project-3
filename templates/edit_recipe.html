@@ -8,7 +8,7 @@
         <!-- Recipe name input-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-carrot prefix light-green-text text-darken-4"></i>
+                <i class="fas fa-pen prefix light-green-text text-darken-4"></i>
                 <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{recipe.recipe_name}}"
                     type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
@@ -16,18 +16,20 @@
         </div>
         <!--Timing input-->
         <div class="input-field col s12 m4">
+            <i class="fas fa-stopwatch prefix light-green-text text-darken-4"></i>
             <input id="timing" name="timing" type="number" class="validate" required>
             <label for="timing">Duration (minutes)</label>
         </div>
         <!--serves input-->
         <div class="input-field col s12 m4">
+            <i class="fas fa-utensils prefix light-green-text text-darken-4"></i>
             <input id="servings" name="servings" type="number" class="validate" required>
             <label for="servings">Serves</label>
         </div>
         <!-- ingredients input-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-utensils prefix light-green-text text-darken-4"></i>
+                <i class="fas fa-carrot prefix light-green-text text-darken-4"></i>
                 <textarea id="ingredients" name="ingredients" type="text" class="materialize-textarea validate"
                     required>
                     {{- recipe.ingredients -}}
@@ -38,7 +40,7 @@
         <!-- instructions input-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-scroll prefix light-green-text text-darken-4"></i>
+                <i class="fas fa-blender prefix light-green-text text-darken-4"></i>
                 <textarea id="instructions" name="instructions" type="text" class="materialize-textarea validate"
                     required>
                     {{- recipe.instructions -}}    
