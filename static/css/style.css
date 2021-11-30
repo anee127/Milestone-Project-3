@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 
 * {
-    font-family: 'Merriweather', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -73,3 +73,6 @@ footer {
     float: left;
     width: 24.99999%;
   }
+
+  /* show_recipe pages styling  */
+

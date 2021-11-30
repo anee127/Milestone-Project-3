@@ -6,28 +6,26 @@
 <div class="container">
   <div class="row justify-content-center pt-5">
     <div class="col-12 col-lg-8 mb-4">
-      <div class="card shadow-2-strong px-5 py-3 recipe-card  yellow lighten-4">
+      <div class="card shadow-2-strong px-5 py-3 recipe-card lime lighten-4">
         <!-- Recipe Title -->
-        <h5 class="card-title text-center">{{ recipe.recipe_name }}</h5>
+        <h4 class="recipe-title center-align">{{ recipe.recipe_name }}</h4>
         <div class="row">
           <div class="col-12 col-md-6 pt-3 text-center">
             <!-- Recipe Image -->
             {% if recipe.image_url %}
             <img src="{{ recipe.image_url }}" alt="recipe image" class="recipe-card-image responsive-img" />
             {% else %}
-            <i class="recipe-card-image-placeholder fas fa-utensils"></i>
+            <i class="recipe-card-image-placeholder fas fa-hamburger"></i>
             {% endif %}
           </div>
            <!-- Recipe Details -->
-           <div class="mt-2">
-            <i class="fas fa-users pe-1"></i>Serves: {{ recipe.servings }}
-          </div>
-          <div class="mt-2">
-            <i class="far fa-clock pe-1"></i>{{ recipe.timing }} minutes
+           <div row="col-12 col-md6 pt-3">
+            <h6><i class="fas fa-utensils pe-1"></i> Serves: {{ recipe.servings }}</h6>
+            <h6><i class="fas fa-stopwatch"></i> {{ recipe.timing }} minutes</h6>
           </div>
           <div class="col-12 col-md-6 pt-3">
             <!-- Recipe Ingredients --> 
-            <h6 class="text-decoration-underline">Ingredients</h6>
+            <h5>Ingredients</h5>
             <ul>
               {% for list in recipe.ingredients.splitlines() %}
               <li>
@@ -36,9 +34,10 @@
               {% endfor %}
             </ul>   
           </div>
+          
           <div class="col-12 col-md-6 pt-3">
-            <!-- Recipe Ingredients --> 
-            <h6 class="text-decoration-underline">Instructions</h6>
+            <!-- Recipe Istructions --> 
+            <h5>Instructions</h5>
             <ul>
               {% for steps in recipe.instructions.splitlines() %}
               <li>
@@ -50,11 +49,11 @@
             <div class="d-flex justify-content-between align-items-center mt-2">
               <small>
                 <a class="recipe-card-link" href="{{ url_for('profile', username=recipe.created_by) }}">
-                  <i class="fas fa-user-circle pe-1"></i>Added by: {{ recipe.created_by }}
+                  <i class="fas fa-user-circle pe-1"></i>Created By: {{ recipe.created_by }}
                 </a>
                 {% if session.user|lower == recipe.created_by|lower %}
               </small>
-              <a class="btn btn-sm ms-auto btn-outline-dark light-green text-primary-color"
+              <a class="btn btn-sm ms-auto btn-outline-dark amber text-primary-color"
                 href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
                 Edit Recipe
               </a>
