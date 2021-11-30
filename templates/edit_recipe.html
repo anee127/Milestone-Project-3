@@ -59,9 +59,9 @@
         </div>
         <!-- Save Edits button -->
         <div class="row">
-            <button type="submit" class="btn waves-effect waves-light light-green darken-1 text-shadow">
-                Save Edits <i class="fas fa-edit"></i>
-            </button>
+          <a  href="{{ url_for( 'profile', username=session['user'] )}}"  type="submit" class="btn waves-effect waves-light light-green darken-1 text-shadow">
+            Save Edits <i class="fas fa-edit"></i>
+          </a>
             <!--Delete Button-->
             <a class="waves-effect waves-light red lighten-1 btn-small">Delete Recipe</a>
         </div>
