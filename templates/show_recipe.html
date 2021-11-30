@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row justify-content-center pt-5">
     <div class="col-12 col-lg-8 mb-4">
-      <div class="card shadow-2-strong px-5 py-3 recipe-card">
+      <div class="card shadow-2-strong recipe-card yellow lighten-4">
         <!-- Recipe Title -->
         <h5 class="card-title text-center">{{ recipe.recipe_name }}</h5>
         <div class="row">
@@ -54,18 +54,21 @@
                 </a>
                 {% if session.user == recipe.created_by %}
               </small>
-              <a class="btn btn-sm ms-auto btn-outline-dark light-green text-primary-color"
+              <a class="btn btn-sm ms-auto btn-outline-dark light-green"
                 href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
                 Edit Recipe
               </a>
             </a>
-            <a class="waves-effect waves-light red lighten-1 btn-small">Delete Recipe</a>
+            <a class="waves-effect waves-light deep-orange lighten-1 btn-small">Delete Recipe</a>
             </a>
               {% endif %}
             </div>
           </div>
         </div>
       </div>
+      <div class="row">
+        <a href="{{ url_for('all_recipes')}}" class="waves-effect waves-light btn light-green darken-4">Back to Recipes</a> 
+    </div>
     </div>
   </div>
 </div>
