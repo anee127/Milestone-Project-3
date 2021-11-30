@@ -53,7 +53,7 @@
                 </a>
                 {% if session.user|lower == recipe.created_by|lower %}
               </small>
-              <a class="btn btn-sm ms-auto btn-outline-dark amber text-primary-color"
+              <a class="btn btn-small ms-auto amber text-primary-color"
                 href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
                 Edit Recipe
               </a>
@@ -71,8 +71,8 @@
               <div class="modal-buttons">
                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
                   class="waves-effect waves-light btn-small deep-orange darken-4 right">Delete</a>
-                <a href="{{ url_for( 'profile', username=session['user'] )}}"
-                  class="btn-small waves-effect waves-light btn grey darken-4 right">Cancel</a>
+                <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}"
+                  class="btn-small waves-effect waves-light btn-small grey darken-4 right">Cancel</a>
               </div>
           </div>
         </div>
