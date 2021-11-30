@@ -15,7 +15,7 @@
 <body>
     <header>
       <!-- Desktop sidenav (code taken from materialize navbar section)-->
-        <nav class= "nav-extended text-shadow #33691e light-green darken-4">
+        <nav class= "nav-extended text-shadow light-green darken-4 flow-text">
             <div class="nav-wrapper">
               <a href="{{ url_for('homepage') }}" class="brand-logo justify-content-center">Genius Recipes</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -34,7 +34,7 @@
             </div>
           </nav>
          <!-- Mobile sidenav (code taken from materialize navbar section)-->
-          <ul class="sidenav #fff59d yellow lighten-5" id="mobile-demo">
+          <ul class="sidenav yellow lighten-5 flow-text" id="mobile-demo">
             <li><h4 class="center-align green-text text-darken-4" class="brand-logo justify-content-center">Genius Recipes</h4></li>
             <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
             <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>

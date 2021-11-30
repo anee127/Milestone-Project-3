@@ -12,16 +12,7 @@
 
 .brand-logo {
     font-family: 'Eczar', sans-serif;
-    font-size: 60px;
-    letter-spacing: 2.5px;
     text-transform: uppercase;
-}
-
-/* buttons styling */
-
-.green-btn {
-    text-shadow: none;
-    font-size: 20px;
 }
 
 /* index. html: welcome card*/
@@ -36,15 +27,22 @@ p {
     border-radius: 10px;
 }
 
+.hero-page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
 #hero-image {
-    opacity: 0.8;
-    background-image: url("../images/salad-image.jpg");
-    background-attachment: fixed;
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: auto;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
 }
 
@@ -53,13 +51,10 @@ p {
     border-radius: 10px;
     font-size: 20px;
     font-weight: bold;
-    color: #fafafa;
     text-shadow: 1px 2px 3px black;
-    position: absolute;
-    text-align: center;
+    position: relative;
     padding: 20px;
     margin: 15% 25%;
-    width: 50%;
 }
 
 footer {
