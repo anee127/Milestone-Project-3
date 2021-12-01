@@ -4,6 +4,7 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -64,15 +65,4 @@ footer {
 
 /* Profile page styling */
 
-.image-placeholder {
-    font-size: 50px;
-}
-
-.responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-  }
-
-  /* show_recipe pages styling  */
-
+/* show_recipe pages styling  */

@@ -96,8 +96,6 @@ def profile(username):
         )
         return render_template("profile.html", username=user, user_recipes=user_recipes)
 
-    return redirect(url_for("login"))
-
 
 # Logout function
 @app.route("/logout")
@@ -123,10 +121,12 @@ def show_recipe(recipe_id):
     )
 
 # all recipes function
+
+
 @app.route("/all_recipes", methods=["GET"])
 def all_recipes():
     # grab the session user's username from db
-       
+
     recipes = list(
         mongo.db.recipes.find()
     )
@@ -138,9 +138,11 @@ def all_recipes():
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("all_recipes.html", recipes=recipes)  
+    return render_template("all_recipes.html", recipes=recipes)
 
 # Adding recipe function
+
+
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if not session.get("user"):
