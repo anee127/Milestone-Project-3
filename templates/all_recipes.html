@@ -17,34 +17,27 @@
       </div>
     </form>
   </div>
-</div>
+<!-- layout of recipe grid taken from https://riptutorial.com/materializecss/example/30081/horizontal-card -->
 {% if recipes|length > 0 %}
-<div class="container">
-  <div class="row justify-content-center pt-5">
     {% for recipe in recipes %}
-    <div class="col-12 col-lg-8 mb-4">
-      <div class="card shadow-2-strong lime lighten-4 recipe-card">
-        <!-- Recipe Title -->
-        <h5 class="card-title text-center">{{ recipe.recipe_name }}</h5>
-        <div class="row">
+    <div class="col s12 m8 shadow-2-strong desktop-card">
+      <div class="card horizontal lime lighten-4 ">
           <a href="{{url_for('show_recipe', recipe_id=recipe._id)}}">
-            <div class="col-12 col-md-6 pt-3 text-center">
+            <div class="card-image s12 m4">
               <!-- Recipe Image -->
               {% if recipe.image_url %}
-              <img src="{{ recipe.image_url }}" alt="recipe image" class="recipe-card-image responsive-img" />
+              <img src="{{ recipe.image_url }}" alt="recipe image" class="responsive-img" />
               {% else %}
               <i class="recipe-card-image-placeholder fas fa-utensils"></i>
               {% endif %}
             </div>
           </a>
           <!-- Recipe Details -->
-          <div class="mt-2">
-            <i class="fas fa-users pe-1"></i>Serves: {{ recipe.servings }}
-          </div>
-          <div class="mt-2">
-            <i class="far fa-clock pe-1"></i>{{ recipe.timing }} minutes
-          </div>
-          <div class="col-12 col-md-6 pt-3">
+          <div class="card-stacked s12 m7">
+              <!-- Recipe Title -->
+          <h5 class="card-title text-center">{{ recipe.recipe_name }}</h5>
+            <h5><i class="fas fa-utensils prefix"></i></i>Serves: {{ recipe.servings }}</h5>
+            <h5><i class="fas fa-stopwatch prefix"></i>{{ recipe.timing }} minutes</h5>
             <div class="d-flex justify-content-between align-items-center mt-2">
               <small>
                 <a class="recipe-card-link" href="{{ url_for('profile', username=recipe.created_by) }}">
@@ -60,12 +53,12 @@
               {% endif %}
             </div>
           </div>
+           
         </div>
       </div>
       {% endfor %}
-    </div>
-  </div>
   {% else %}
   <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
   {% endif %}
+</div>  
   {% endblock %}
