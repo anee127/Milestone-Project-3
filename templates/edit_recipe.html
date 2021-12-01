@@ -59,11 +59,14 @@
         </div>
         <!-- Save Edits button -->
         <div class="row">
+            <a href="{{ url_for('profile', username=session['user']) }}"
+                class="waves-effect waves-light btn grey darken-4">Cancel
+            </a>
           <a  href="{{ url_for( 'profile', username=session['user'] )}}"  type="submit" class="btn waves-effect waves-light light-green darken-1 text-shadow">
-            Save Edits <i class="fas fa-edit"></i>
+            Save Edits
           </a>
             <!--Delete Button-->
-            <a href="#delete_recipe" class="waves-effect waves-light deep-orange darken-4 btn-small modal-trigger">Delete Recipe</a>
+            <a href="#delete_recipe" class="waves-effect waves-light deep-orange darken-4 btn modal-trigger">Delete Recipe</a>
             </a>       
          </div>
          <!-- Modal Content: Delete Recipe -->

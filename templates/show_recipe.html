@@ -53,7 +53,7 @@
                 </a>
                 {% if session.user|lower == recipe.created_by|lower %}
               </small>
-              <a class="btn btn-small ms-auto amber text-primary-color"
+              <a class="btn btn-small ms-auto amber darken-2 text-primary-color"
                 href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
                 Edit Recipe
               </a>
