@@ -2,6 +2,7 @@
 {% block content%}
 <h3 class="center-align">Log In</h3>
 <!-- initial code template taken from materialise to render card and input structure -->
+<div class="container">
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
         <div class="card-panel lime lighten-4">
@@ -40,5 +41,6 @@
             <a href="{{ url_for('register') }}" class="light-green-text text-darken-4">Register Account</a>
         </p>
     </div>
+</div>
 </div>
 {% endblock %}
