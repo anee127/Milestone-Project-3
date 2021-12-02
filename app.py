@@ -88,13 +88,13 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
-    user = mongo.db.users.find_one(
+    username = mongo.db.users.find_one(
         {"username": session["user"]})
-    if session["user"]:
-        user_recipes = list(
+    user_recipes = list(
             mongo.db.recipes.find({"created_by": session["user"]})
         )
-        return render_template("profile.html", username=user, user_recipes=user_recipes)
+    if session["user"]:
+        return render_template("profile.html", username=username, user_recipes=user_recipes)
 
 
 # Logout function
