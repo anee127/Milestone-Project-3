@@ -25,11 +25,11 @@
     <div class="col s4 recipes-display">
       <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
         <img class="img_recipe" src="{{ recipe.image_url}}" alt="recipe">
-        <span class="card-title recipes-title"> {{ recipe.recipe_name }} </span>
+        <h6 class="card-title recipes-title light-green-text text-darken-4"> {{ recipe.recipe_name }} </h6>
       </a>
       <h6><i class="fas fa-utensils prefix"></i></i> Serves: {{ recipe.servings }}</h6>
       <h6><i class="fas fa-stopwatch prefix"></i> {{ recipe.timing }} minutes</h6>
-      <a class="recipe-card-link" href="{{ url_for('profile', username=recipe.created_by) }}">
+      <a class="recipe-card-link light-green-text text-darken-1" href="{{ url_for('profile', username=recipe.created_by) }}">
         <i class="fas fa-user-circle pe-1"></i>Added by: {{ recipe.created_by }}
       </a>
       <!-- edit button -->
@@ -53,11 +53,11 @@
     <div class="col s6 recipes-display">
       <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
         <img class="img_recipe" src="{{ recipe.image_url}}" alt="recipe">
-        <span class="card-title recipes-title">{{ recipe.recipe_name }}</span>
+        <span class="card-title recipes-title light-green-text text-darken-4">{{ recipe.recipe_name }}</span>
       </a>
       <p><i class="fas fa-utensils prefix"></i></i> Serves: {{ recipe.servings }}</p>
       <p><i class="fas fa-stopwatch prefix"></i> {{ recipe.timing }} minutes</p>
-      <a class="recipe-card-link" href="{{ url_for('profile', username=recipe.created_by) }}">
+      <a class="recipe-card-link light-green-text text-darken-1" href="{{ url_for('profile', username=recipe.created_by) }}">
         <i class="fas fa-user-circle pe-1"></i> Added by: {{ recipe.created_by }}
       </a>
       <!-- edit button -->
