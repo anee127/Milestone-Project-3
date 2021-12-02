@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% block content%}
-<header class="hero-page">
-  <div id="hero-image" class="responsive-img">
-    <img src="{{url_for('static', filename='images/salad-image.jpg') }}" alt="hero-image">
-  </div>
+<header id="hero-image" class="text-center bg-image d-flex flex-column justify-content-center align-items-center">
   <div id="mask" class="white-text flow-text d-flex flex-column justify-content-around center-align">
     <h3>Welcome to Genius Recipes</h3>
     <p>Sign up to Genius Recipes now to create your own directory of personal recipes! upload and share your genius
       recipes with others through this site.</p>
-    <a class="btn-large light-green darken-4 white-text" href="{{ url_for('register') }}" role="button">REGISTER
+    <a class="btn btn-large light-green darken-4 white-text" href="{{ url_for('register') }}" role="button">REGISTER
       NOW!</a>
   </div>
 </header>

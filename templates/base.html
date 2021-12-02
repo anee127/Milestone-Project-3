@@ -19,9 +19,9 @@
 <body>
   <header>
     <!-- Desktop sidenav (code taken from materialize navbar section)-->
-    <nav class="nav-extended text-shadow light-green darken-4">
-      <div class="nav-wrapper">
-        <a href="{{ url_for('homepage') }}" class="brand-logo justify-content-center flow-text">Genius Recipes</a>
+    <nav>
+      <div class="nav-wrapper text-shadow light-green darken-4">
+        <h4></h4><a href="{{ url_for('homepage') }}" class="nav-logo flow-text large">Genius Recipes</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
@@ -40,7 +40,7 @@
     <!-- Mobile sidenav (code taken from materialize navbar section)-->
     <ul class="sidenav yellow lighten-5" id="mobile-demo">
       <li>
-        <h6 class="center-align green-text text-darken-4 flow-text" class="brand-logo justify-content-center">Genius Recipes</h6>
+        <h6 class="center-align green-text text-darken-4 flow-text" class="nav-logo">Genius Recipes</h6>
       </li>
       <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
       <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
@@ -65,11 +65,11 @@
       <div class="container">
         © 2021 Aneesa Khan
         <a class="white-text right social-icons" target="_blank" href="https://pinterest.com/"><i
-            class="fab fa-pinterest-square"></i></a>
+            class="fab fa-pinterest-square fa-2x"></i></a>
         <a class="white-text right social-icons" target="_blank" href="https://www.instagram.com/"><i
-            class="fab fa-instagram-square"></i></a>
+            class="fab fa-instagram-square fa-2x"></i></a>
         <a class="white-text right social-icons" target="_blank" href="https://www.facebook.com/"><i
-            class="fab fa-facebook-square"></i></a>
+            class="fab fa-facebook-square fa-2x"></i></a>
       </div>
     </div>
   </footer>

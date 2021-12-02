@@ -11,55 +11,30 @@
 
 /* base.html: navabar styling*/
 
-.brand-logo {
+.nav-logo {
     font-family: 'Eczar', sans-serif;
     text-transform: uppercase;
 }
 
 /* index. html: welcome card*/
 
-h3 {
-    margin-top: 0;
-}
-
-p {
-    margin-top: 0;
-    border-radius: 10px;
-}
-
-.hero-page {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-}
-
 #hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-}
+    min-height: 100vh;
+    background-image: url('../images/salad-image.jpg');
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+}    
 
 #mask {
     background-color: rgba(255, 95, 31, 0.7);
     border-radius: 10px;
-    font-size: 20px;
     font-weight: bold;
     text-shadow: 1px 2px 3px black;
-    position: relative;
-    padding: 20px;
-    margin: 15% 25%;
 }
 
-footer {
-    font-size: 20px;
-    font-weight: bold;
+.social-icons {
+    margin-right: 5px;
 }
 
 /* Profile page styling */
@@ -71,3 +46,9 @@ footer {
 /* show_recipe pages styling  */
 
   
+
+@media screen and (max-width: 526px) {
+    .brand-logo {
+      display: none;
+    }
+  }
