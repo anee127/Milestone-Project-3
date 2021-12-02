@@ -45,10 +45,24 @@
 
 /* show_recipe pages styling  */
 
-  
+.recipe-display {
+    text-align: justify;
+    margin-bottom: 20px;
+}
 
-@media screen and (max-width: 526px) {
-    .brand-logo {
-      display: none;
-    }
-  }
+.img_recipe {
+    display: grid;
+    margin: 0;
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+
+.card-area {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    justify-content: center;
+    perspective: 1000px;
+}
