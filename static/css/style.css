@@ -46,9 +46,7 @@
     margin-right: 5px;
 }
 
-/* Profile page styling */
-
-/* show_recipe pages styling  */
+/* recipe cards styling  */
 
 .recipe-display {
     text-align: justify;
@@ -63,8 +61,8 @@
     object-fit: cover;
 }
 
-.back {
-    margin-bottom: 20px;
+.buttons {
+    margin: 10px;
 }
 
 .recipe-card {
