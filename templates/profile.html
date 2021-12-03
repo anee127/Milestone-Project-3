@@ -34,19 +34,18 @@
       <h6><i class="fas fa-stopwatch prefix"></i> {{ recipe.timing }} minutes</h6>
       <a class="recipe-card-link light-green-text text-darken-1"
         href="{{ url_for('profile', username=recipe.created_by) }}">
-        <i class="fas fa-user-circle pe-1"></i> Created by: {{ recipe.created_by }}
+        <i class="fas fa-user-circle pe-1"></i>Created by: {{ recipe.created_by }}
       </a>
-      <!-- edit button -->
-      {% if session.user|lower == recipe.created_by|lower %}
+      <!-- edit/delete button -->
       <a class="btn btn-small ms-auto amber darken-2 text-primary-color"
         href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
         Edit Recipe
       </a>
-      {% endif %}
+      <a href="#delete_recipe" class="waves-effect waves-light deep-orange darken-4 btn-small modal-trigger">Delete
+        Recipe</a>
+      </a>
     </div>
     {% endfor %}
-    {% else %}
-    <h4 class="deep-orange-text center-align">No Results Found</h4>
     {% endif %}
   </div>
 
