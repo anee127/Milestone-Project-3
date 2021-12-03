@@ -94,7 +94,9 @@ def profile(username):
             mongo.db.recipes.find({"created_by": session["user"]})
         )
     if session["user"]:
-        return render_template("profile.html", username=username, user_recipes=user_recipes)
+        return render_template(
+            "profile.html", username=username, user_recipes=user_recipes
+            )
 
 
 # Logout function
