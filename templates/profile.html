@@ -20,7 +20,7 @@
   </div>
 
   <!-- All recipes for desktop-->
-  {% if recipes|length > 0 %}
+  {% if session.user|lower == recipe.created_by|lower %}
   <div class="row hide-on-small-only">
     {% for recipe in recipes %}
     <div class="col s4 recipe-display">
