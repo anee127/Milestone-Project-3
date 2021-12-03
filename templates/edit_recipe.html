@@ -17,13 +17,13 @@
         <!--Timing input-->
         <div class="input-field col s12 m4">
             <i class="fas fa-stopwatch prefix light-green-text text-darken-4"></i>
-            <input id="timing" name="timing" type="number" class="validate" required>
+            <input id="timing" name="timing" type="number" class="validate" required value="{{recipe.recipe_timing}}">
             <label for="timing">Duration (minutes)</label>
         </div>
         <!--serves input-->
         <div class="input-field col s12 m4">
             <i class="fas fa-utensils prefix light-green-text text-darken-4"></i>
-            <input id="servings" name="servings" type="number" class="validate" required>
+            <input id="servings" name="servings" type="number" class="validate" required value="{{recipe.recipe_servings}}">
             <label for="servings">Serves</label>
         </div>
         <!-- ingredients input-->
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-images prefix light-green-text text-darken-4"></i>
-                <input id="image_url" name="image_url" type="url" pattern="https?://.+" class="validate" required>
+                <input id="image_url" name="image_url" type="url" pattern="https?://.+" class="validate" required value="{{recipe.image_url}}">
                 <label for="image_url">Image url</label>
                 <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
             </div>
