@@ -1,86 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}" />
+        {% block styles %} {% endblock %}
+        <title>Genius Recipes</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
-  {% block styles %}
-  {% endblock %}
-  <title>Genius Recipes</title>
-</head>
+    <body>
+        <header>
+            <!-- Desktop Sidenav -->
+            <nav>
+                <div class="nav-wrapper text-shadow light-green darken-4">
+                    <a href="{{ url_for('homepage') }}" class="nav-logo flow-text large">GENIUS RECIPES</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
+                        <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
+                        {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        {% else %}
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+            <!-- Mobile Sidenav -->
+            <ul class="sidenav amber lighten-5" id="mobile-demo">
+                <li>
+                    <h6 class="center-align green-text text-darken-4 flow-text" class="nav-logo">GENIUS RECIPES</h6>
+                </li>
+                <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
+                <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
+                {% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                {% endif %}
+            </ul>
+        </header>
+        <!-- link to other files -->
+        <main>
+            {% block content %} {% endblock %}
+        </main>
+        <!-- Footer -->
+        <footer class="page-footer light-green darken-4">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2021 Aneesa Khan
+                    <a class="white-text right social-icons" target="_blank" href="https://pinterest.com/"><i class="fab fa-pinterest-square fa-2x"></i></a>
+                    <a class="white-text right social-icons" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x"></i></a>
+                    <a class="white-text right social-icons" target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a>
+                </div>
+            </div>
+        </footer>
 
-<body>
-  <header>
-    <!-- Desktop Sidenav -->
-    <nav>
-      <div class="nav-wrapper text-shadow light-green darken-4">
-        <a href="{{ url_for('homepage') }}" class="nav-logo flow-text large">GENIUS RECIPES</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
-          <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
-          {% if session.user %}
-          <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-          <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-          <li><a href="{{ url_for('logout') }}">Logout</a></li>
-          {% else %}
-          <li><a href="{{ url_for('register') }}">Register</a></li>
-          <li><a href="{{ url_for('login') }}">Login</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
-    <!-- Mobile Sidenav -->
-    <ul class="sidenav amber lighten-5" id="mobile-demo">
-      <li>
-        <h6 class="center-align green-text text-darken-4 flow-text" class="nav-logo">GENIUS RECIPES</h6>
-      </li>
-      <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
-      <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
-      {% if session.user %}
-      <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-      <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-      <li><a href="{{ url_for('logout') }}">Logout</a></li>
-      {% else %}
-      <li><a href="{{ url_for('register') }}">Register</a></li>
-      <li><a href="{{ url_for('login') }}">Login</a></li>
-      {% endif %}
-    </ul>
-  </header>
-  <!-- link to other files -->
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
-  <!-- Footer -->
-  <footer class="page-footer light-green darken-4">
-    <div class="footer-copyright">
-      <div class="container">
-        © 2021 Aneesa Khan
-        <a class="white-text right social-icons" target="_blank" href="https://pinterest.com/"><i
-            class="fab fa-pinterest-square fa-2x"></i></a>
-        <a class="white-text right social-icons" target="_blank" href="https://www.instagram.com/"><i
-            class="fab fa-instagram-square fa-2x"></i></a>
-        <a class="white-text right social-icons" target="_blank" href="https://www.facebook.com/"><i
-            class="fab fa-facebook-square fa-2x"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <!--Script Tags-->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="{{url_for('static', filename='js/script.js')}}"></script>
-  {% block scripts %}
-  {% endblock%}
-</body>
-
+        <!--Script Tags-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="{{url_for('static', filename='js/script.js')}}"></script>
+        {% block scripts %} {% endblock%}
+    </body>
 </html>

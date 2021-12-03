@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .text-shadow {
@@ -12,14 +11,14 @@
 /* base.html: navabar styling*/
 
 .nav-logo {
-    font-family: 'Eczar', sans-serif;
+    font-family: "Eczar", sans-serif;
 }
 
 /* index. html: welcome card*/
 
 #hero-image {
     min-height: 100vh;
-    background-image: url('../images/salad-image.jpg');
+    background-image: url("../images/salad-image.jpg");
     background-attachment: fixed;
     background-position: center top;
     background-size: cover;
@@ -33,7 +32,6 @@
     margin: 20px 75px;
     padding: 8px;
 }
-
 
 .text {
     font-weight: bold;

@@ -1,91 +1,81 @@
-{% extends "base.html" %}
-{% block title %}
-{{ recipe.recipe_name }} - Genius Recipes
-{% endblock %}
-{% block content %}
+{% extends "base.html" %} {% block title %} {{ recipe.recipe_name }} - Genius Recipes {% endblock %} {% block content %}
 <div class="container">
-  <div class="row justify-content-center pt-5">
-    <div class="col-12 col-lg-8 mb-4">
-      <div class="card shadow-2-strong px-5 py-3 recipe-card lime lighten-4">
-        <!-- Recipe Title -->
-        <h4 class="recipe-title center-align green-text text-darken-4">{{ recipe.recipe_name }}</h4>
-        <div class="row">
-          <div class="col-12 col-md-6 pt-3 text-center">
-            <!-- Recipe Image -->
-            {% if recipe.image_url %}
-            <img src="{{ recipe.image_url }}" alt="recipe image" class="recipe-card-image responsive-img" />
-            {% else %}
-            <i class="recipe-card-image-placeholder fas fa-hamburger"></i>
-            {% endif %}
-          </div>
-          <!-- Recipe Details -->
-          <div row="col-12 col-md6 pt-3">
-            <h6><i class="fas fa-utensils pe-1"></i> Serves: {{ recipe.servings }}</h6>
-            <h6><i class="fas fa-stopwatch"></i> {{ recipe.timing }} minutes</h6>
-          </div>
-          <div class="col-12 col-md-6 pt-3">
-            <!-- Recipe Ingredients -->
-            <h5>Ingredients</h5>
-            <ul>
-              {% for list in recipe.ingredients.splitlines() %}
-              <li>
-                <p><i class="far fa-circle fa-xs"></i> {{list}}</p>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
+    <div class="row justify-content-center pt-5">
+        <div class="col-12 col-lg-8 mb-4">
+            <div class="card shadow-2-strong px-5 py-3 recipe-card lime lighten-4">
+                <!-- Recipe Title -->
+                <h4 class="recipe-title center-align green-text text-darken-4">{{ recipe.recipe_name }}</h4>
+                <div class="row">
+                    <div class="col-12 col-md-6 pt-3 text-center">
+                        <!-- Recipe Image -->
+                        {% if recipe.image_url %}
+                        <img src="{{ recipe.image_url }}" alt="recipe image" class="recipe-card-image responsive-img" />
+                        {% else %}
+                        <i class="recipe-card-image-placeholder fas fa-hamburger"></i>
+                        {% endif %}
+                    </div>
+                    <!-- Recipe Details -->
+                    <div row="col-12 col-md6 pt-3">
+                        <h6><i class="fas fa-utensils pe-1"></i> Serves: {{ recipe.servings }}</h6>
+                        <h6><i class="fas fa-stopwatch"></i> {{ recipe.timing }} minutes</h6>
+                    </div>
+                    <div class="col-12 col-md-6 pt-3">
+                        <!-- Recipe Ingredients -->
+                        <h5>Ingredients</h5>
+                        <ul>
+                            {% for list in recipe.ingredients.splitlines() %}
+                            <li>
+                                <p><i class="far fa-circle fa-xs"></i> {{list}}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
 
-          <div class="col-12 col-md-6 pt-3">
-            <!-- Recipe Istructions -->
-            <h5>Instructions</h5>
-            <ul>
-              {% for steps in recipe.instructions.splitlines() %}
-              <li>
-                <p>{{steps}}</p>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div class="d-flex justify-content-between align-items-center mt-2">
-            <p>
-              <i class="fas fa-user-circle pe-1"></i> Created By: {{ recipe.created_by }}
-            </p>
-            <!-- edit/delete buttons -->
-            {% if session.user|lower == recipe.created_by|lower %}
-            <a class="buttons btn btn-small ms-auto amber darken-2 text-primary-color"
-              href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
-              Edit Recipe
-            </a>
-            </a>
-            <a href="#delete_recipe"
-              class="buttons waves-effect waves-light deep-orange darken-4 btn-small modal-trigger">Delete Recipe</a>
-            </a>
-            {% endif %}
-          </div>
+                    <div class="col-12 col-md-6 pt-3">
+                        <!-- Recipe Istructions -->
+                        <h5>Instructions</h5>
+                        <ul>
+                            {% for steps in recipe.instructions.splitlines() %}
+                            <li>
+                                <p>{{steps}}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <p><i class="fas fa-user-circle pe-1"></i> Created By: {{ recipe.created_by }}</p>
+                        <!-- edit/delete buttons -->
+                        {% if session.user|lower == recipe.created_by|lower %}
+                        <a class="buttons btn btn-small ms-auto amber darken-2 text-primary-color" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
+                            Edit Recipe
+                        </a>
+                        <a href="#delete_recipe" class="buttons waves-effect waves-light deep-orange darken-4 btn-small modal-trigger">
+                            Delete Recipe
+                        </a>
+                        {% endif %}
+                    </div>
 
-          <!-- Modal Content: Delete Recipe -->
-          <div id="delete_recipe" class="modal amber lighten-4">
-            <!-- modal message -->
-            <div class="modal-content">
-              <h5>Please confirm if you want to delete this recipe.</h5>
-              <h4 class="modal-header light-green">{{recipe.recipe_name}}</h4>
+                    <!-- Modal Content: Delete Recipe -->
+                    <div id="delete_recipe" class="modal amber lighten-4">
+                        <!-- modal message -->
+                        <div class="modal-content">
+                            <h5>Please confirm if you want to delete this recipe.</h5>
+                            <h4 class="modal-header light-green">{{recipe.recipe_name}}</h4>
+                        </div>
+                        <!-- modal buttons -->
+                        <div class="modal-buttons">
+                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="buttons waves-effect waves-light btn-small deep-orange darken-4 right">Delete</a>
+                            <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}" class="buttons btn-small waves-effect waves-light btn-small grey darken-4 right">Cancel</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- modal buttons -->
-            <div class="modal-buttons">
-              <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                class="buttons waves-effect waves-light btn-small deep-orange darken-4 right">Delete</a>
-              <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}"
-                class="buttons btn-small waves-effect waves-light btn-small grey darken-4 right">Cancel</a>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div>
-    <a href="{{ url_for('all_recipes') }}" class="buttons btn btn-small ms-auto light-green darken-4">
-      Back to Recipes
-    </a>
-  </div>
+    <div>
+        <a href="{{ url_for('all_recipes') }}" class="buttons btn btn-small ms-auto light-green darken-4">
+            Back to Recipes
+        </a>
+    </div>
 </div>
 {% endblock %}
