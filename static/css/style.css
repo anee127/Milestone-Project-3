@@ -16,6 +16,10 @@
     text-transform: uppercase;
 }
 
+.text {
+    margin-top: 0;
+}
+
 /* index. html: welcome card*/
 
 #hero-image {

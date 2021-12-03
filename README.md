@@ -32,27 +32,28 @@ The purpose of Genius Recipes is to be a recipe sharing site where registered us
 + [Media](#media)
 + [Acknowledgements](#acknowledgements) 
 - [**Contact**](#contact)
+
 ## **User Experience (UX)**
 ### Purpose
 This milestone project idea is to create a sharing recipe website for registered users and allow anyone interested to access recipes by these users and with a simple design inspired by natural foods. 
 **As a user I want to:**
 1.	I want to easily find out what or who the site is for.
-2.	want to easily navigate the website.
-3.	I want to be able to register for the website.
+2.	I want to easily navigate through the website.
+3.	I want to be able to register/login for the website.
 4.	I want to easily add my own recipes as well able to edit or delete them. 
-5.	I want to easily find others users recipes or a particular recipe through a search function. 
-6.	I want to be able to edit or delete my profile. 
+5.	I want to easily find recipes or a particular recipe through a search function. 
+
 ### Design
 1. **Structure**
 I opted for a simple webpage design structure with a single logo, navbar and footer, pop-up modal windows and relevant images for the homepage. I opted for a natural foods colour scheme with bright greens, yellows and pinks. 
 2. **Colour Scheme**
 -	A bright colour scheme in contrast to light background and dark text to help the recipe cards and images stand out. 
--	The key colours being green, yellow, pink and white.
+-	The key colours being green, yellow, orange, white and black. 
 -	The colours used will tie in with the colours of the hero image on the homepage. 
-![Colour Scheme](assets/images/colour-scheme-2.png)
+![Colour Scheme]()
 Source: [materialize]()
 3. **Typography**
-The standard font is used throughout the webpage, a font that is easy to read and stands out. Bold, coloured text is used for emphasis on the heading and for buttons. Sans-serif is the backup font in case the original font does not load onto the website.
+Poppins font is used throughout the webpage, a font that is easy to read and stands out. Bold, coloured text is used for emphasis on the headings and for buttons. Sans-serif is the backup font in case the original font does not load onto the website. Eczar font style was used only for the logo. 
 4. **Images**
 A relevant image was used for the hero image of the homepage that ties in with the colour scheme. All other recipe images are taken from external sources uploaded by registered users.
 5. **Wireframes**
@@ -61,13 +62,15 @@ At the start of the project, I designed the wireframes using Balsamiq. These ini
 ## **Features**
 ### Existing Features
 -	Responsive design and user-friendly interface.
--	Easy navigation menu in header.
-- simple search feature.
+-	Easy navigation menu from navbar.
+- simple search feature for recipes.
 - easy and simple forms for registration and recipe uploads. 
 - Informative form validation feedback.
-- Users can add, edit or delete recipes and/or profile. 
+- Users can add, edit or delete recipes. 
 **Future Features**
--	To verify email addresses by sending registered users and email once they have successfully registered.  
+- to allow users to update or delete their profile.
+- to allow registered users to have a public profile.
+-	To use and verify email addresses by sending registered users an email once they have successfully registered.  
 -	Users can comment on recipes or message creator of recipe.   
 -	registered users can save recipes to a ‘favourites’ section.  
 ## Technologies Used
