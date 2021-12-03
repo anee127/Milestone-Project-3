@@ -13,19 +13,14 @@ The purpose of Genius Recipes is to be a recipe sharing site where registered us
 + [Existing Features](#exsiting-features)
 + [Features left to Include](#features-left-to-include)
 
+- [**Testing**](#technologies)
+
 - [**Technologies**](#technologies)
 + [Languages](#languages)
 + [Frameworks, Libraries and Programs](#frameworks-libraries-and-programs)
 
 - [**Deployment**](#deployment)
 + [Deploy to Heroku](#deploy-to-heroku)
-
-- [**Testing**](#testing)
-+ [Testing User Stories](#testing-user-stories)
-+ [Testing Usability of Webpage](#testing-usability-of-webpage)
-+ [Validator Checks](#validator-checks)
-+ [Additional Testing](#additional-testing)
-+ [Bugs](#bugs) 
 
 - [**Credits**](#credits)
 + [Content](#content)
@@ -36,6 +31,8 @@ The purpose of Genius Recipes is to be a recipe sharing site where registered us
 ## **User Experience (UX)**
 ### Purpose
 This milestone project idea is to create a sharing recipe website for registered users and allow anyone interested to access recipes by these users and with a simple design inspired by natural foods. 
+
+### User Stories
 **As a user I want to:**
 1.	I want to easily find out what or who the site is for.
 2.	I want to easily navigate through the website.
@@ -73,6 +70,7 @@ At the start of the project, I designed the wireframes using Balsamiq. These ini
 -	To use and verify email addresses by sending registered users an email once they have successfully registered.  
 -	Users can comment on recipes or message creator of recipe.   
 -	registered users can save recipes to a ‘favourites’ section.  
+
 ## Technologies Used
 ### Languages
 -	[HTML5](https://en.wikipedia.org/wiki/HTML5)
@@ -98,6 +96,7 @@ At the start of the project, I designed the wireframes using Balsamiq. These ini
 -	 [CSS Formatter](https://jigsaw.w3.org/css-validator/)
 -	 [JShint](https://jshint.com/)
 -	 [Webformatter](https://webformatter.com/)
+
 # Deployment
 ### Deploy To Heroku
 Ensure your app has debug mode set to False when deploying.
@@ -112,15 +111,10 @@ Select Automatic deploys and choose your desired branch.
 Go to the app settings on Heroku and click 'Reveal Config Vars'
 Add the required keys as they are in your local env.py (i.e IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME)
 Go to the app Overview page and when the build is finished, click 'Open App'
+
 # Testing
 [**Testing Link**] (testing.md)
-### Additional Testing
-- The Website was tested on Google Chrome, Internet Explorer and Safari browsers.
-- The website was viewed on a variety of devices including desktops, Laptops, Mobile phones, iPads and iPhones.
-- Friends and family members were asked to review the site to point out any bugs, user experience issues and/or suggestions.
-- Project posted on Slack, asking for feedback from fellow students.
-  - Feedback action:
-### Bugs
+
 # Credits
 ### Media
 # Acknowledgements

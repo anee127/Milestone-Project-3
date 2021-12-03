@@ -14,57 +14,43 @@ Back to [README](/README.md) file.
 
 # Automated Testing 
 
-- [W3C Markup Validation](https://validator.w3.org/) was used to validate HTML code. Please see below main errors:
-    - The first child option element of a select element with a required attribute, and without a multiple attribute, and without a size attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content.
-    - Duplicate IDs recipe_ingredient and recipe_method.
-- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
-- [JSHint](https://jshint.com/) was used to validate the Javascript. Please see below main errors:
-    - 11 warning which mostly consisted of missing semi-colons.
-- [Python Unittest](https://docs.python.org/3/library/unittest.html) was used to test the date_format function in the app.py file. 
-    - To run the test:    
-        1. Open [test_app.py](/test_app.py) file.
-        2. In the terminal command line type "python -m unittest test_app".
-        3. If all the test passed you'll simply see ".." with the status of "OK" in the command line.
+- [W3C Markup Validation](https://validator.w3.org/) was used to validate HTML code of the deployed website. One error appeared stating Duplicate attribulte: class. this was fixed by removing the duplicate class.
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS. One error occured stating Value Error : letter-spacing only 0 can be a unit. You must put a unit after your number : 0.4. 
+- [JSHint](https://jshint.com/) was used to validate the Javascript. One warning message occured - 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+- [PEP8 Online](http://pep8online.com/) was used to validate python code in the app.py file. No errors occured. 
 
-# User Stories Testing 
+# User Stories Testing
 
-#### Client Stories
+### All Users Testing
 
-The following section goes through the user stories from the UX section of the readme. 
+1. Upon entering the landing page of the site, as a user I want to be greeted with a welcome message and a button to direct me to the register page.
+2. As a user I want to access links to the homepage, recipes and register page through the navigation bar. 
+3. as a user if I scroll down I want to access the social links within the footer. 
+4. As a user I want to browse through all recipes on the recipes page as well as search for recipes that are available on the site using keywords taken from the titles of each recipe. If a search word does not match a recipe I should see a message stating 'recipe not found'.
+5. As a user I want to view the recipes page so see all recipes with an image, title, timing, servings and who the recipe was created by.
+6. As a user I can click on either the recipe image or title from the recipes page to view the whole recipe on a new page. The ingredients and instructions will then become visible.
+7. The ingredients are sperated with bullet points and step for ingredients is on a new line for easy readability.
+8. As a users I can navigate to the register page to create a username and password that will be saved in a database, if I want to upload my own recipes. 
+8. as a user I can access the login page but if i have not registered i want to access the link to redirect to the register page.
 
-1. As a new visitor to the website or registered user, I want to easily be able to view recipes.
-    1. Once the user lands on the website, there is a call to action button to view recipes on the website. 
-    2. Viewing recipes are also made available with one click from the navigation bar.
-    3. If the view continues  to scroll down from the landing page they will also be able to see the latest three recipes on the site.
-2. As a new visitor to the website or registered user, I want to be able to view ingredients and instructions that are clear and easy to follow.
-    1. A user can easily browse recipes and then simply click on the “view recipe” button to view more information about the recipe which includes ingredients and method (instructions for cooking).
-    2. Each ingredient and method is listed clearly and concise. Methods are in an ordered list so users can easily follow the instructions. Each ingredient is listed on its own line so it is easy to read and identify. 
-3. As a new visitor to the website or registered user, I want to easily view tips on sports nutrition.
-    1. Once the user lands on the website, they can scroll down slightly to see the features of the website. This includes the blog feature which includes a call to action button “View Blog” which redirects the user to the blog page where they can read top tips from sport nutritionists. 
-    2. Users can also access the blog page through a link on the navigation bar called “Blog”. 
-4. As a new visitor to the website , I want to easily sign up to the site and share recipes.
-    1. Once the user lands on the website, they can scroll down slightly to see the feature of the website. This includes the sign up feature which includes a call to action button “Register now” which redirects the registration page where they can sign up to the website. 
-    2. Users can also access the registration page through a link on the navigation bar called “Register”.
-    3. The form on the registration is displayed in a card and each input field is clearly laid out and includes a label to prompt the user. The form includes first and last name, username and password.
-    4. The form is also validated and prompts the user with messages if their input is incorrect. 
-5. As a new visitor to the website or registered user, I want to easily search for new recipes.
-    1. Users can easily search and filter recipes by categories using the search form on the recipe page. 
-    2. The search bar allows users to search for recipes in the database by recipe name or the ingredients in the recipe. 
-    3. Users can also filter recipes via category which includes breakfast, lunch and dinner. The user can select a checkbox in relation to what kind of meal they would like to search in the db and recipes will return that relate to that category. 
-6. As a registered user, I want to easily add recipes to the site.
-    1. Users can access the add recipe page either through the a link on the navigation bar “Add Recipe” or they can use the call to action button “add recipe” on their profile page. 
-    2. The form on the add recipe page is displayed in a card and each input field is clearly laid out and includes a label to prompt the user. The form includes Recipe name, description, category, difficulty, duration, ingredients, method and image link. 
-    3. The form is also validated and prompts the user with messages if their input is incorrect or if a field is needed to submit the form. 
-7. As a registered user, I want to easily edit and delete recipes I have shared.
-    1. Users are able to manage the recipes they have created on their profile page. The profile page includes the recipes they have created on the site as well as call to action buttons “edit”and “delete”. 
-    2. Users can also access the delete and edit button when viewing the recipe in full. They are displayed in a form of hover buttons which are easy to identify. 
-    3. The edit button redirects users to the form in which they used to create the recipe. All the information inputted is relayed in the inout field which they are then able to edit and submit the updated changes to the database. 
-    4. The delete button will delete the recipe selected but will first pop up a modal page confirming they want to delete the recipe to avoid accidentally deletion. 
+### Registered Users Testing 
+
+1. As a registered user I can access my own profile page where I can add recipes that will be saved to a database, to my collection.
+2. As a registered user I want to access the add recipes through the navigation bar or my profile. It will direct to a form to input my own recipe onto the website with easy input fields for each section. This includes the recipe name, timing (number), servings (number), ingredients, instructions and URL link for an image.
+3. As a registered user I want to easily edit and delete recipes I have uploaded. 
+4. As a registered user I want to access edit buttons through any page containing my recipes. 
+5. As a registered user I want to be able to delete my recipes through my profile page or through the edit recipe page. I want to be prompted with a warning before deleting the recipe. I should access the cancel button if I do not wish to delete a recipe.
+6. As a registered user I should be able to logout and be redirected to the login page. 
 
 # Manual Testing 
 
 #### Navigation bar (Jinja permissions and links)
-- Links when user is logged in:
+- general user or when a user logs out:
+    - Genius Recipes logo and weclome link redirects to homepage.
+    - Recipe link redirects to recipes page.
+    - Log in link redirects to login page.
+    - Register link and confirm it takes the user to register page.
+Links when user is logged in:
     - Click MatchFit logo and confirm it takes the user to homepage.
     - Click Home link and confirm it takes the user to homepage.
     - Click Recipes link and confirm it takes the user to recipe page.
@@ -72,12 +58,6 @@ The following section goes through the user stories from the UX section of the r
     - Click Add recipes link and confirm it takes the user to add recipe page.
     - Click Profile link and confirm it takes the user to profile page and display user specific info. 
     - Click Log Out link and confirm it logs the user out and takes user to login page. 
-- New visitor or when a user logs out:
-    - Click Home link and confirm it takes the user to homepage.
-    - Click Recipe link and confirm it takes the user to recipe page.
-    - Click Blog link and confirm it takes the user to blog page.
-    - Click Log in link and confirm it takes the user to login page.
-    - Click Register link and confirm it takes the user to register page.
 
 #### Side navigation bar (Tablet and Mobile devices)
 - Links when user is logged in:

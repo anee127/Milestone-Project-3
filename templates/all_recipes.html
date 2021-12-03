@@ -25,7 +25,7 @@
     <div class="col s4 recipe-display">
       <!-- Recipe Image -->
       <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
-        <img class="img_recipe" src="{{ recipe.image_url}}" alt="recipe" class="responsive-img">
+        <img class="img_recipe" src="{{ recipe.image_url}}" alt="recipe">
         <h6 class="card-title recipes-title light-green-text text-darken-4"> {{ recipe.recipe_name }} </h6>
       </a>
       <!-- Recipe Details -->
@@ -55,11 +55,11 @@
     <div class="col s6 recipe-display">
       <!-- Recipe Image -->
       <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
-        <img class="img_recipe" src="{{ recipe.image_url}}" alt="recipe" class="responsive-img">
+        <img class="img_recipe" src="{{ recipe.image_url}}" alt="recipe">
         <span class="card-title recipes-title light-green-text text-darken-4">{{ recipe.recipe_name }}</span>
       </a>
       <!-- Recipe Details -->
-      <p><i class="fas fa-utensils pe-1"></i></i> Serves: {{ recipe.servings }}</p>
+      <p><i class="fas fa-utensils pe-1"></i> Serves: {{ recipe.servings }}</p>
       <p><i class="fas fa-stopwatch pe-1"></i> {{ recipe.timing }} Minutes</p>
       <p>
         <i class="fas fa-user-circle pe-1"></i>Created By:{{ recipe.created_by }}
