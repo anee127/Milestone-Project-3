@@ -48,7 +48,7 @@
           </div>
           <div class="d-flex justify-content-between align-items-center mt-2">
             <p>
-                <i class="fas fa-user-circle pe-1"></i>Created By: {{ recipe.created_by }}
+              <i class="fas fa-user-circle pe-1"></i> Created By: {{ recipe.created_by }}
             </p>
             {% if session.user|lower == recipe.created_by|lower %}
             <a class="btn btn-small ms-auto amber darken-2 text-primary-color"
