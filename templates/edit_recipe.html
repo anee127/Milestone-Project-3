@@ -3,89 +3,93 @@
 
 <h3 class="light-green-text text-darken-4 center-align">Edit Recipe</h3>
 <div class="container">
-<div class="row card-panel lime lighten-4">
-    <form class="col s12" method="POST" action="{{url_for('edit_recipe', recipe_id=recipe._id)}}">
-        <!-- Recipe name input-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-pen prefix light-green-text text-darken-4"></i>
-                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{recipe.recipe_name}}"
-                    type="text" class="validate" required>
-                <label for="recipe_name">Recipe Name</label>
+    <div class="row card-panel lime lighten-4">
+        <form class="col s12" method="POST" action="{{url_for('edit_recipe', recipe_id=recipe._id)}}">
+            <!-- Recipe name input-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pen prefix light-green-text text-darken-4"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
+                        value="{{recipe.recipe_name}}" type="text" class="validate" required>
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
             </div>
-        </div>
-        <!--Timing input-->
-        <div class="input-field col s12 m4">
-            <i class="fas fa-stopwatch prefix light-green-text text-darken-4"></i>
-            <input id="timing" name="timing" type="number" class="validate" required value="{{recipe.recipe_timing}}">
-            <label for="timing">Duration (minutes)</label>
-        </div>
-        <!--serves input-->
-        <div class="input-field col s12 m4">
-            <i class="fas fa-utensils prefix light-green-text text-darken-4"></i>
-            <input id="servings" name="servings" type="number" class="validate" required value="{{recipe.recipe_servings}}">
-            <label for="servings">Serves</label>
-        </div>
-        <!-- ingredients input-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-carrot prefix light-green-text text-darken-4"></i>
-                <textarea id="ingredients" name="ingredients" placeholder="Please type each ingredient on a new line."
-                    type="text" class="materialize-textarea validate" required>
+            <!--Timing input-->
+            <div class="input-field col s12 m4">
+                <i class="fas fa-stopwatch prefix light-green-text text-darken-4"></i>
+                <input id="timing" name="timing" type="number" class="validate" required
+                    value="{{recipe.recipe_timing}}">
+                <label for="timing">Duration (minutes)</label>
+            </div>
+            <!--serves input-->
+            <div class="input-field col s12 m4">
+                <i class="fas fa-utensils prefix light-green-text text-darken-4"></i>
+                <input id="servings" name="servings" type="number" class="validate" required
+                    value="{{recipe.recipe_servings}}">
+                <label for="servings">Serves</label>
+            </div>
+            <!-- ingredients input-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-carrot prefix light-green-text text-darken-4"></i>
+                    <textarea id="ingredients" name="ingredients"
+                        placeholder="Please type each ingredient on a new line." type="text"
+                        class="materialize-textarea validate" required>
                     {{- recipe.ingredients -}}
                     </textarea>
-                <label for="ingredients">Ingredients</label>
+                    <label for="ingredients">Ingredients</label>
+                </div>
             </div>
-        </div>
-        <!-- instructions input-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-blender prefix light-green-text text-darken-4"></i>
-                <textarea id="instructions" name="instructions"
-                    placeholder="Please type each instruction on a new line." type="text"
-                    class="materialize-textarea validate" required>
+            <!-- instructions input-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-blender prefix light-green-text text-darken-4"></i>
+                    <textarea id="instructions" name="instructions"
+                        placeholder="Please type each instruction on a new line." type="text"
+                        class="materialize-textarea validate" required>
                     {{- recipe.instructions -}}    
                     </textarea>
-                <label for="instructions">Instructions</label>
+                    <label for="instructions">Instructions</label>
+                </div>
             </div>
-        </div>
-        <!-- file image input-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-images prefix light-green-text text-darken-4"></i>
-                <input id="image_url" name="image_url" type="url" pattern="https?://.+" class="validate" required value="{{recipe.image_url}}">
-                <label for="image_url">Image url</label>
-                <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
+            <!-- file image input-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-images prefix light-green-text text-darken-4"></i>
+                    <input id="image_url" name="image_url" type="url" pattern="https?://.+" class="validate" required
+                        value="{{recipe.image_url}}">
+                    <label for="image_url">Image url</label>
+                    <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
+                </div>
             </div>
-        </div>
-        <!-- Save Edits button -->
-        <div class="row">
-            <a href="{{ url_for('profile', username=session['user']) }}"
-                class="waves-effect waves-light btn grey darken-4">Cancel
-            </a>
-            <a href="{{ url_for( 'profile', username=session['user'] )}}" type="submit"
-                class="btn waves-effect waves-light light-green darken-1 text-shadow">
-                Save Edits
-            </a>
-            <!--Delete Button-->
-            <a href="#delete_recipe" class="waves-effect waves-light deep-orange darken-4 btn modal-trigger">Delete
-                Recipe</a>
-            </a>
-        </div>
-        <!-- Modal Content: Delete Recipe -->
-        <div id="delete_recipe" class="modal">
-            <div class="modal-content">
-                <h5>please confirm if you want to delete this recipe.</h5>
-                <h4 class="modal-header">{{recipe.recipe_name}}</h4>
+            <!-- Save Edits button -->
+            <div class="row">
+                <a href="{{ url_for('profile', username=session['user']) }}"
+                    class="waves-effect waves-light btn grey darken-4">Cancel
+                </a>
+                <a href="{{ url_for( 'profile', username=session['user'] )}}" type="submit"
+                    class="btn waves-effect waves-light light-green darken-1 text-shadow">
+                    Save Edits
+                </a>
+                <!--Delete Button-->
+                <a href="#delete_recipe" class="waves-effect waves-light deep-orange darken-4 btn modal-trigger">Delete
+                    Recipe</a>
+                </a>
             </div>
-            <div class="modal-buttons">
-                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                    class="waves-effect waves-light btn-small deep-orange darken-4 right">Delete</a>
-                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                    class="btn-small waves-effect waves-light btn grey darken-4 right">Cancel</a>
-            </div>
-    </form>
-</div>
+            <!-- Modal Content: Delete Recipe -->
+            <div id="delete_recipe" class="modal">
+                <div class="modal-content">
+                    <h5>please confirm if you want to delete this recipe.</h5>
+                    <h4 class="modal-header">{{recipe.recipe_name}}</h4>
+                </div>
+                <div class="modal-buttons">
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                        class="waves-effect waves-light btn-small deep-orange darken-4 right">Delete</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                        class="btn-small waves-effect waves-light btn grey darken-4 right">Cancel</a>
+                </div>
+        </form>
+    </div>
 </div>
 
 
