@@ -20,9 +20,9 @@
   </div>
 
   <!-- All recipes for desktop-->
-  {% if session.user|lower == recipe.created_by|lower %}
   <div class="row hide-on-small-only">
     {% for recipe in recipes %}
+    {% if session.user|lower == recipe.created_by|lower %}
     <div class="col s4 recipe-display">
       <!-- Recipe Image -->
       <a href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
