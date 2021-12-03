@@ -1,13 +1,13 @@
-![Genius Recipes](/static/images/)
-**Live Page Deployed by Heroku**: https://
+![Genius Recipes](/static/images/responsive-design-3.jpg)
+**Live Page Deployed by Heroku**: (https://genius-recipes-project.herokuapp.com/homepage)
 **This website is part of the Third Milestone Project carried out through the Code Institute.**
-The purpose of Genius Recipes is to be a recipe sharing site where registered users can upload their own recipes and share with anyone. The users have to be logged in to create, edit or delete their recipes and profile but the recipes are public to all. There is a search function to find recipes through the directory. 
+The purpose of Genius Recipes is to be a recipe sharing site where registered users can upload their own recipes and share with anyone. The users have to be logged in to create, edit or delete their recipes but the recipes are public to all. There is a search function to find recipes through the directory. 
+
 ## <u>Table of Contents</u>
 - [**User Experience (UX)**](#user-experience-ux)
 + [Purpose](#purpose)
 + [User Stories](#user-stories)
 + [Design](#design)
-+ [Wireframes](#wireframes)
 
 - [**Features**](#features)
 + [Existing Features](#exsiting-features)
@@ -18,7 +18,7 @@ The purpose of Genius Recipes is to be a recipe sharing site where registered us
 + [Frameworks, Libraries and Programs](#frameworks-libraries-and-programs)
 
 - [**Deployment**](#deployment)
-+ [Deploy to Github](#deploy-to-github)
++ [Deploy to Heroku](#deploy-to-heroku)
 
 - [**Testing**](#testing)
 + [Testing User Stories](#testing-user-stories)
@@ -113,20 +113,7 @@ Go to the app settings on Heroku and click 'Reveal Config Vars'
 Add the required keys as they are in your local env.py (i.e IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME)
 Go to the app Overview page and when the build is finished, click 'Open App'
 # Testing
-### Testing User Stories
-### Testing Usability of Webpage
-- [**HTML Validator**](https://validator.w3.org/nu/#textarea)
-
-- [**CSS Validator**](https://jigsaw.w3.org/css-validator/#validate_by_input)
-
-- [**JShint**](https://jshint.com/) 
-[JShint report](assets/images/jshint-report.png) 
-
-- [**Chrome Lighthouse tool**](https://developers.google.com/web/tools/lighthouse)
-Chrome Lighthouse test on mobile device
-![Chrome Lighthouse test](assets/images/lighthouse-test-1.png)
-Chrome Lighthouse test on desktop device
-![Chrome Lighthouse test](assets/images/lighthouse-test-2.png)
+[**Testing Link**] (testing.md)
 ### Additional Testing
 - The Website was tested on Google Chrome, Internet Explorer and Safari browsers.
 - The website was viewed on a variety of devices including desktops, Laptops, Mobile phones, iPads and iPhones.
