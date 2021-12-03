@@ -62,3 +62,7 @@
     height: 25vw;
     object-fit: cover;
 }
+
+.back {
+    margin-bottom: 20px;
+}
