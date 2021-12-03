@@ -18,10 +18,10 @@
 
 <body>
   <header>
-    <!-- Desktop sidenav (code taken from materialize navbar section)-->
+    <!-- Desktop Sidenav -->
     <nav>
       <div class="nav-wrapper text-shadow light-green darken-4">
-        <a href="{{ url_for('homepage') }}" class="nav-logo flow-text large">Genius Recipes</a>
+        <a href="{{ url_for('homepage') }}" class="nav-logo flow-text large">GENIUS RECIPES</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
@@ -37,10 +37,10 @@
         </ul>
       </div>
     </nav>
-    <!-- Mobile sidenav (code taken from materialize navbar section)-->
-    <ul class="sidenav yellow lighten-5" id="mobile-demo">
+    <!-- Mobile Sidenav -->
+    <ul class="sidenav amber lighten-5" id="mobile-demo">
       <li>
-        <h6 class="center-align green-text text-darken-4 flow-text" class="nav-logo">Genius Recipes</h6>
+        <h6 class="center-align green-text text-darken-4 flow-text" class="nav-logo">GENIUS RECIPES</h6>
       </li>
       <li><a href="{{ url_for('homepage') }}">Welcome</a></li>
       <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
@@ -54,13 +54,13 @@
       {% endif %}
     </ul>
   </header>
-  <!-- link to index.html -->
+  <!-- link to other files -->
   <main>
     {% block content %}
     {% endblock %}
   </main>
   <!-- Footer -->
-  <footer class="page-footer #33691e light-green darken-4">
+  <footer class="page-footer light-green darken-4">
     <div class="footer-copyright">
       <div class="container">
         © 2021 Aneesa Khan

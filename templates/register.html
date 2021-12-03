@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content%}
 <h3 class="center-align light-green-text text-darken-4">Register</h3>
-<!-- initial code template taken from materialise to render card and input structure -->
 <div class="container">
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
@@ -24,7 +23,7 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-                <!-- register -->
+                <!-- register button -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large light-green darken-4 text-shadow">
                         Register <i class="fas fa-sign-in-alt"></i>
@@ -33,7 +32,7 @@
             </div>
         </form>
     </div>
-
+<!-- registerd users redirect to login -->
     <div class="row">
         <div class="col s12">
             <h6 class="center-align">
