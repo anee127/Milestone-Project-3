@@ -56,9 +56,9 @@
             <!-- Save Edits button -->
             <div class="row">
                 <a href="{{ url_for('profile', username=session['user']) }}" class="buttons waves-effect waves-light btn grey darken-4">Cancel </a>
-                <a href="{{ url_for( 'profile', username=session['user'] )}}" type="submit" class="buttons btn waves-effect waves-light light-green darken-1 text-shadow">
+                <button type="submit" class="buttons btn waves-effect waves-light light-green darken-1 text-shadow">
                     Save Edits
-                </a>
+                </button>
                 <!--Delete Button-->
                 <a href="#delete_recipe" class="buttons waves-effect waves-light deep-orange darken-4 btn modal-trigger">
                     Delete Recipe
