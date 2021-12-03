@@ -16,10 +16,6 @@
     text-transform: uppercase;
 }
 
-.text {
-    margin-top: 0;
-}
-
 /* index. html: welcome card*/
 
 #hero-image {
@@ -34,10 +30,16 @@
 #mask {
     background-color: rgba(255, 95, 31, 0.7);
     border-radius: 10px;
+    text-shadow: 1px 2px 3px black;
+    margin: 20px 75px;
+    padding: 8px;
+}
+
+
+.text {
     font-weight: bold;
     text-shadow: 1px 2px 3px black;
-    margin: 20px 50px;
-    padding: 8px;
+    margin-top: 0;
 }
 
 .social-icons {
