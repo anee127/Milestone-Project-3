@@ -33,10 +33,9 @@
       <!-- Recipe Details -->
       <h6><i class="fas fa-utensils prefix"></i></i> Serves: {{ recipe.servings }}</h6>
       <h6><i class="fas fa-stopwatch prefix"></i> {{ recipe.timing }} minutes</h6>
-      <a class="recipe-card-link light-green-text text-darken-1"
-        href="{{ url_for('profile', username=recipe.created_by) }}">
-        <i class="fas fa-user-circle pe-1"></i>Created by: {{ recipe.created_by }}
-      </a>
+      <p>       
+        <i class="fas fa-user-circle pe-1"></i>Created by:{{ recipe.created_by }}
+      </p>
       <!-- edit/delete button -->
       <a class="btn btn-small ms-auto amber darken-2 text-primary-color"
         href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
@@ -48,7 +47,7 @@
     </div>
 
   </div>
-  <!-- All recipes for mobile -->
+  <!-- user recipes for mobile -->
   <div class="row show-on-small hide-on-med-and-up">
     <div class="col s6 recipe-display">
       <!-- Recipe Image -->
@@ -59,6 +58,9 @@
       <!-- Recipe Details -->
       <h6><i class="fas fa-utensils pe-1"></i></i> Serves: {{ recipe.servings }}</h6>
       <h6><i class="fas fa-stopwatch pe-1"></i> {{ recipe.timing }} minutes</h6>
+      <p>       
+        <i class="fas fa-user-circle pe-1"></i>Created by:{{ recipe.created_by }}
+      </p>
       <!-- edit/delete button -->
       <a class="btn btn-small ms-auto amber darken-2 text-primary-color"
         href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" role="button">
