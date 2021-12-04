@@ -175,6 +175,10 @@ The project contained 2 collections in the database uploaded to MongoDB:
 - [AmIResponsive](http://ami.responsivedesign.is/)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/)
 
+# Testing
+
+Please navigate to [Testing File](https://github.com/anee127/Milestone-Project-3/blob/main/TESTING.md) to find information on testing.
+
 # Deployment
 
 ### Deploy To Heroku
@@ -189,10 +193,6 @@ The project contained 2 collections in the database uploaded to MongoDB:
 10. Click on app settings on Heroku and click **'Reveal Config Vars'**.
 11. Add the required keys as they are in your local env.py (IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME, etc).
 12. Go to the app **Overview** page and when the build is finished, click **'Open App'**.
-
-# Testing
-
-Please navigate to [Testing File](https://github.com/anee127/Milestone-Project-3/blob/main/TESTING.md) to find information on testing.
 
 # Credits
 
