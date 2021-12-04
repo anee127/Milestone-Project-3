@@ -70,19 +70,58 @@ At the start of the project, I designed the wireframes using Balsamiq. These ini
 ## **Features**
 
 ### Existing Features
--	Responsive design and user-friendly interface.
+
+**Navbar**
 -	Easy navigation menu from navbar.
-- simple search feature for recipes.
-- easy and simple forms for registration and recipe uploads. 
+- Nav logo is also a link to homepage. 
+- For registered users links include: welcome, recipes, profile, add recipe and log out.
+- For non registered users links include: welcome, recipes, register and login.
+- Navbar menu collapses into sidenav for mobile devices. 
+
+**Footer**
+- Simple footer, same colour as navbar with copyright handle and social links icons.
+
+**Homepage**
+-	Hero Image displayed that covers whole page.
+- Hero text in semi-transparent box to welcome users.
+- Register button is there to give quick access to users to register page. 
+
+**Recipes**
+- Simple search feature for recipes, with search button and reset button.
+- Recipes of all users displayed in order from first to last upload. 
+- Recipe cards are stacked in grid form only displaying recipe image, timing, serving, and the user it was created by. 
+- Registered users can access edit button from this page. 
+
+**Login/Register**
+- Register page allows users to create username and password.
+- Flash message appears once buttons are clicked and redirects to empty profile page.
+- Login page allows registered users to submit details saved in db and enter their profile page.
+
+**Profile Page**
+- Displays registered users name as title.
+- Displays registered users recipes in cards.
+- Shows an 'add recipe' link to add new recipes to page.
+- Each recipe has edit or delete button.
+- Delete button will prompt delete modal to either confirm deletion or cancel and redirect to profile page.
+
+**Add/Edit Recipe Forms**
+- Easy and simple forms for recipe uploads and changes. 
+- On edit recipes page, information is kept in input fields from db.
 - Informative form validation feedback.
-- CRUD functionality for uploading user recipes. 
+- Flash messages appear each time user submits recipe/edits. 
+
+**Show Recipe**
+- Individual recipes are displayed on a page when image or title is clicked from recipes/profile page.
+- Recipe card displays the image, timing, serving, ingredients, instructions and who the recipe was created by. 
+- Registered users can access edit/delete buttons from this page.
+- 'Back to recipes' button below recipe card to be directed back to recipes page.
 
 ### Features Left To Include
-- to allow registered users to update or delete their profile.
-- to allow registered users to have a public profile.
+- To allow registered users to update or delete their profile.
+- To allow registered users to have a public profile.
 -	To use and verify email addresses by sending registered users an email once they have successfully registered.  
 -	Users can comment on recipes or message creator of recipe.   
--	registered users can save recipes to a ‘favourites’ section.  
+-	Registered users can save recipes to a ‘favourites’ section.  
 
 ## Technologies
 
@@ -146,7 +185,7 @@ Please navigate to [Testing File](https://github.com/anee127/Milestone-Project-3
 - Recipe images taken from [Kitchen Sanctuary](https://www.kitchensanctuary.com/cheesy-pasta-bake-chicken-bacon/), [Insanely Good Recipes](https://insanelygoodrecipes.com/taco-casserole/), [I Am A Food Blog](https://iamafoodblog.com/tiktok-salmon-rice-bowl/) and [Damn Delicious](https://damndelicious.net/2019/08/28/greek-chicken-kabobs/).
 ### Acknowledgements
 - My Mentor for continuous help and support throughout the project.
- - The [Code Institute](https://codeinstitute.net/) Slack Community.
+- The [Code Institute](https://codeinstitute.net/) Slack Community.
 - A friend who has given me continuous help and advice throughout the project.
 ### Contact
 Created by @aneesakhan

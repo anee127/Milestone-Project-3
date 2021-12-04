@@ -99,6 +99,8 @@ Back to [README](/README.md) file.
 - registration/login form displayed well and easy to read. 
 - Form should not submit if left empty.
 - Form validation on input fields and display message for empty or incorrect fields. 
+- A flash message appears when user logs into or registers account.
+- A flash message “Incorrect Username and/or Password“ appears when login input details are not correct.
 - Form appears on mobile and tablet devices, displayed well and easy to read.
 
 #### Add Recipe 
@@ -107,6 +109,7 @@ Back to [README](/README.md) file.
 - Form should not submit if left empty.
 - Form validation on input fields and display message for empty or incorrect fields. 
 - Button to add recipe directs to profile and displays recipe.
+- A flash message appears confirming a new recipe has been added.
 - Cancel button directs user back to the profile page.
 - Form appears on mobile and tablet devices, displayed well and easy to read.
 
@@ -117,11 +120,12 @@ Back to [README](/README.md) file.
 - Form should not submit if left empty.
 - Form validation on input fields and display message for empty or incorrect fields. 
 - Button to submit edits directs to profile and displays updated recipe.
+- A flash message appears confirming the recipe has been updated.
 - Delete button prompts modal message to user to confirm deletion of recipe.
 - Cancel button directs user back to the profile page.
 - Form appears on mobile and tablet devices, displayed well and easy to read.
 
-#### Shoe Recipe
+#### Show Recipe
 
 - Recipe title is taken from db and displayed correctly.
 - Image is taken from db and displayed correctly.
