@@ -145,6 +145,7 @@
 # Bugs
 
 - There was one bug that appeared for the 'created by' link on recipes, where users should be redirected to the uploaders profile page but an error page occurred. This link was removed as I could not fix the problem. I will come back to the project and make profile pages public once I understand how to create the function.
+- The timing and serving results do not stay inside the input field on the edit recipes page. The data is saved in the database once recipe has been added or edited but does not render on edit page and has to be inputed everytime a user wants to edit their recipes. I am unable of how to fix this as the jinja templating and python code all seem to be fime. 
 
 ##  Back to [README](https://github.com/anee127/Milestone-Project-3/blob/main/README.md) file.
 
