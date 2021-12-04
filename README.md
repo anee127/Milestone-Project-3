@@ -23,7 +23,7 @@ The purpose of Genius Recipes is to be a recipe sharing site where registered us
 + [Languages](#languages)
 + [Frameworks, Libraries and Programs](#frameworks-libraries-and-programs)
 
-- [**Testing**](#technologies)
+- [**Testing**](#testing)
 
 - [**Deployment**](#deployment)
 + [Deploy to Heroku](#deploy-to-heroku)
