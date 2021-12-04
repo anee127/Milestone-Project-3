@@ -1,6 +1,6 @@
 ![Genius Recipes](/static/images/responsive-design-3.jpg) 
 
-**Live Page Deployed by Heroku**: (https://genius-recipes-project.herokuapp.com/homepage)
+**Live Page Deployed by Heroku**: (https://genius-recipes-project.herokuapp.com/)
 
 **This website is part of the Third Milestone Project carried out through the Code Institute.**
 
@@ -106,7 +106,7 @@ At the start of the project, I designed the wireframes using Balsamiq. These ini
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) 
 - [WTForms](https://wtforms.readthedocs.io/en/2.3.x/)
 - [Flask-WTforms](https://flask-wtf.readthedocs.io/en/stable/)
-- [Heroku](https://www.heroku.com/) was used for deployment.
+- [Heroku](https://www.heroku.com/)
 -	[Balsamiq](https://balsamiq.com/)
 -	[Google Fonts](https://fonts.google.com/)
 - [HTML Formatter](https://validator.w3.org/)
