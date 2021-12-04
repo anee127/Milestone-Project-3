@@ -134,7 +134,7 @@ At the start of the project, I designed the wireframes using Balsamiq. These ini
 
 # Testing
 
-Please navigate to [Testing File](testing.md) to find information on testing.
+Please navigate to [Testing File](https://github.com/anee127/Milestone-Project-3/blob/main/TESTING.md) to find information on testing.
 
 # Credits
 
