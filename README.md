@@ -13,6 +13,8 @@ The purpose of Genius Recipes is to be a recipe sharing site where registered us
 + [User Stories](#user-stories)
 + [Design](#design)
 
+- [Database Architecture](#database-architecture)
+
 - [**Features**](#features)
 + [Existing Features](#exsiting-features)
 + [Features left to Include](#features-left-to-include)
@@ -66,6 +68,23 @@ A relevant image was used for the hero image of the homepage that ties in with t
 5. **Wireframes**
 At the start of the project, I designed the wireframes using Balsamiq. These initial designs made it easier to plan the overall design and structure of the webpage. Some elements of the final webpage are different from these original wireframes.
 [Wireframes link](static/pdf/MS3-wireframes.pdf)
+
+## **Database Architecture**
+
+The project contained 2 collections in the database uploaded to MongoDB:
+1. Users
+- id_: ObjectId
+- username: string
+- password: string
+2. Recipes
+- _id: ObjectId
+- recipe_name: string
+- timing: int
+- servings: int
+- ingredients: string
+- image_url: string
+- created_by: string
+
 
 ## **Features**
 
