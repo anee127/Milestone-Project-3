@@ -14,7 +14,7 @@
 # Automated Testing 
 
 - [W3C Markup Validation](https://validator.w3.org/) was used to validate HTML code of the deployed website. One error appeared stating Duplicate attribute: class. this was fixed by removing the duplicate class.
-- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS. One error occurred stating Value Error : letter-spacing only 0 can be a unit. You must put a unit after your number : 0.4. 
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS from the deployed website. The only errors occured were from 3rd party links: FontAwesome and Materialize.
 - [JShint](https://jshint.com/) was used to validate the JavaScript. One warning message occurred - 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
 - [PEP8 Online](http://pep8online.com/) was used to validate python code in the app.py file. No errors occurred. 
 
