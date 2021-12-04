@@ -1,8 +1,6 @@
-# Testing
+# **Testing**
 
-Back to [README](/README.md) file.
-
-[Genius Recipes](http://genius-recipes-project.herokuapp.com)
+## [Genius Recipes](http://genius-recipes-project.herokuapp.com)
 
 ## Table of Contents
 
@@ -32,7 +30,7 @@ Back to [README](/README.md) file.
 6. As a user I can click on either the recipe image or title from the recipes page to view the whole recipe on a new page. The ingredients and instructions will then become visible.
 7. The ingredients are separated with bullet points and step for ingredients is on a new line for easy readability.
 8. As a user I can navigate to the register page to create a username and password that will be saved in a database, if I want to upload my own recipes. 
-8. as a user I can access the login page but if I have not registered I want to access the link to redirect to the register page.
+8. As a user I can access the login page but if I have not registered I want to access the link to redirect to the register page.
 
 ### Registered Users Testing 
 
@@ -45,8 +43,8 @@ Back to [README](/README.md) file.
 
 # Manual Testing 
 
-#### Side/Navigation bar
-- general user or when a user logs out:
+#### Side/Navigation Bar
+- General user or when a user logs out:
     - Genius Recipes logo and welcome link redirects user to homepage.
     - Recipe link redirects user to recipes page.
     - Register link redirects user to register page.
@@ -78,14 +76,14 @@ Back to [README](/README.md) file.
 - Recipe cards section:
     - Recipe cards displayed correctly for easy readability and flow.
     - Link to view whole recipe card via recipe image or title of recipes/profile page. 
-    - recipe cards and images responsive on mobile and tablet devices.
+    - Recipe cards and images responsive on mobile and tablet devices.
 
 #### Profile
 
 - Registered user profile details:
     - Username displayed correctly at top of profile. 
     - Add Recipes link on profile page directs to add recipe form. 
-- user recipe cards section:
+- User recipe cards section:
     - Only the recipes created by user displayed on profile. 
     - Recipe cards displayed in same way as recipes page.  
     - Link to view whole recipe card via recipe image or title of recipes/profile page. 
@@ -96,7 +94,7 @@ Back to [README](/README.md) file.
 
 #### Register/login
 
-- registration/login form displayed well and easy to read. 
+- Registration/login form displayed well and easy to read. 
 - Form should not submit if left empty.
 - Form validation on input fields and display message for empty or incorrect fields. 
 - A flash message appears when user logs into or registers account.
@@ -134,7 +132,7 @@ Back to [README](/README.md) file.
 - Instruction listed on next line and displayed correctly. 
 - All recipe content fits correctly in recipe card. 
 - 'Back to Recipes' button redirects back to the recipes page. 
-- recipe card appears on mobile and tablet devices, displayed well and easy to read.
+- Recipe card appears on mobile and tablet devices, displayed well and easy to read.
 
 # Further Testing 
 
@@ -147,3 +145,6 @@ Back to [README](/README.md) file.
 # Bugs
 
 - There was one bug that appeared for the 'created by' link on recipes, where users should be redirected to the uploaders profile page but an error page occurred. This link was removed as I could not fix the problem. I will come back to the project and make profile pages public once I understand how to create the function.
+
+##  Back to [README](https://github.com/anee127/Milestone-Project-3/blob/main/README.md) file.
+
