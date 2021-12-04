@@ -140,9 +140,10 @@ Please navigate to [Testing File](testing.md) to find information on testing.
 
 ### Content
 - Some code was taken from [Materialize 1.0.0](https://materializecss.com/), [CodeInstitute.net](https://codeinstitute.net/), [W3schools.com](https://www.w3schools.com/) and [StackOverflow.com](https://stackoverflow.com/).
-- Recipes were taken from 
+- Recipes were taken from [Kitchen Sanctuary](https://www.kitchensanctuary.com/cheesy-pasta-bake-chicken-bacon/), [Insanely Good Recipes](https://insanelygoodrecipes.com/taco-casserole/), [I Am A Food Blog](https://iamafoodblog.com/tiktok-salmon-rice-bowl/) and [Damn Delicious](https://damndelicious.net/2019/08/28/greek-chicken-kabobs/).
 ### Media
 - Hero Image taken from [Freepik](https://www.freepik.com/). 
+- Recipe images taken from [Kitchen Sanctuary](https://www.kitchensanctuary.com/cheesy-pasta-bake-chicken-bacon/), [Insanely Good Recipes](https://insanelygoodrecipes.com/taco-casserole/), [I Am A Food Blog](https://iamafoodblog.com/tiktok-salmon-rice-bowl/) and [Damn Delicious](https://damndelicious.net/2019/08/28/greek-chicken-kabobs/).
 ### Acknowledgements
 - My Mentor for continuous help and support throughout the project.
  - The [Code Institute](https://codeinstitute.net/) Slack Community.
