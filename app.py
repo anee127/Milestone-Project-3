@@ -19,6 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # welcome page function
 @app.route("/")
 @app.route("/homepage")
@@ -139,7 +140,7 @@ def search():
 def add_recipe():
     if not session.get("user"):
         return render_template("error_handlers/404.html")
-  # Search for recipe and update in db
+# Search for recipe and update in db
     if request.method == "POST":
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
@@ -194,4 +195,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-            
