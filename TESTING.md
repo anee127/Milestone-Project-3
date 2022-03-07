@@ -14,19 +14,19 @@
 # Automated Testing 
 
 - [W3C Markup Validation](https://validator.w3.org/) was used to validate HTML code of the deployed website. One error appeared stating Duplicate attribute: class. this was fixed by removing the duplicate class.
-- ![W3C Markup Validation](/static/images/ms3-html-check.jpg.jpg)
+ ![W3C Markup Validation](/static/images/ms3-html-check.jpg)
 
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS from the deployed website. The only errors occured were from 3rd party links: FontAwesome and Materialize.
-- ![W3C CSS Validation](/static/images/ms3-css-check.jpg)
+ ![W3C CSS Validation](/static/images/ms3-css-check.jpg)
 
 - [JShint](https://jshint.com/) was used to validate the JavaScript. One warning message occurred - 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
 
 - [PEP8 Online](http://pep8online.com/) was used to validate python code in the app.py file. No errors occurred. 
--![PEP8 Online](/static/images/pep8-check.jpg)
+ ![PEP8 Online](/static/images/pep8-check.jpg)
 
 - Lighthouse report in dev tools testing, image results below. 
-- ![Lighthouse report Desktop](/static/images/ms3-lighthouse-desktop.jpg)
-- ![Lighthouse report Mobile](/static/images/ms3-lighthouse-mobile.jpg)
+ ![Lighthouse report Desktop](/static/images/ms3-lighthouse-desktop.jpg)
+ ![Lighthouse report Mobile](/static/images/ms3-lighthouse-mobile.jpg)
 
 # User Stories Testing
 
@@ -59,12 +59,12 @@
     - Recipe link redirects user to recipes page.
     - Register link redirects user to register page.
     - Log in link redirects user to profile page.
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
+ ![Side Bar](/static/images/gr-menu.jpg)
 - Other links for logged in user:
     - Profile link redirects user to profile page and displays user specific info. 
     - Add recipes link redirects user to the add recipe page and displays form.
     - Log Out link redirects user to login page. 
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
+- ![Navigation Bar](/static/images/gr-nav.jpg)
 
 
 #### Footer
@@ -72,14 +72,14 @@
 - Facebook link opens new window for user to Facebook.
 - Instagram link opens new window for user to Instagram.
 - Pinterest link opens new window for user to Pinterest.
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
+ ![Footer](/static/images/gr-footer.jpg)
 
 #### Homepage 
 
 - Hero Image loads at a decent speed and displays clearly. 
 - Welcome message box is visible and text is readable.
 - Register Now button directs user to register page.
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
+ ![Homepage](/static/images/gr-homepage.jpg)
 
 #### Recipes
 
@@ -92,7 +92,7 @@
     - Recipe cards displayed correctly for easy readability and flow.
     - Link to view whole recipe card via recipe image or title of recipes/profile page. 
     - Recipe cards and images responsive on mobile and tablet devices.
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)    
+- ![Recipes](/static/images/gr-search.jpg)    
 
 #### Profile
 
@@ -106,7 +106,7 @@
     - Recipe cards and images responsive on mobile and tablet devices.  
     - Edit button directs to edit recipe page.
     - Delete button prompts modal to delete recipe from website (and database), cancel button redirects to profile page. 
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)     
+- ![Profile](/static/images/gr-profile.jpg)     
 
 
 #### Register/login
@@ -117,8 +117,8 @@
 - A flash message appears when user logs into or registers account.
 - A flash message “Incorrect Username and/or Password“ appears when login input details are not correct.
 - Form appears on mobile and tablet devices, displayed well and easy to read.
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
+ ![login](/static/images/gr-login.jpg)
+ ![Register](/static/images/gr-register.jpg)
 
 #### Add Recipe 
 
@@ -129,7 +129,7 @@
 - A flash message appears confirming a new recipe has been added.
 - Cancel button directs user back to the profile page.
 - Form appears on mobile and tablet devices, displayed well and easy to read.
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
+ ![Add Recipe](/static/images/gr-add.jpg)
 
 
 #### Edit Recipe
@@ -142,7 +142,7 @@
 - Delete button prompts modal message to user to confirm deletion of recipe.
 - Cancel button directs user back to the profile page.
 - Form appears on mobile and tablet devices, displayed well and easy to read.
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
+ ![Edit Recipe](/static/images/gr-edit.jpg)
 
 #### Show Recipe
 
@@ -154,7 +154,7 @@
 - All recipe content fits correctly in recipe card. 
 - 'Back to Recipes' button redirects back to the recipes page. 
 - Recipe card appears on mobile and tablet devices, displayed well and easy to read.
-- ![Genius Recipes](/static/images/responsive-design-3.jpg)
+ ![Show Recipe](/static/images/gr-recipe.jpg)
 
 # Further Testing 
 
